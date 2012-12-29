@@ -23,7 +23,8 @@ set autoindent
 set smartindent
 set tabstop=4
 set shiftwidth=4
-set noet
+set noexpandtab
+autocmd FileType * setlocal noet
 
 " ==================== Search ======================
 set incsearch
