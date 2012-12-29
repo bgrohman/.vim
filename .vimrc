@@ -101,3 +101,7 @@ map <leader>diff <ESC>:DiffOrig<CR>
 
 " Auto-load vimrc changes
 autocmd! BufWritePost .vimrc source %
+
+" Open current file in browsers
+map <leader>chrome <ESC>:silent !/usr/bin/open -a "/Applications/Google Chrome.app" '%:p'<CR>
+map <leader>ff <ESC>:silent !/usr/bin/open -a "/Applications/Firefox.app" '%:p'<CR>

@@ -11,7 +11,7 @@ if version > 580
 endif
 let colors_name = "slate2"
 :hi ColorColumn guibg=#2a2a2a
-:hi Normal guifg=White guibg=grey15
+:hi Normal guifg=#dfdfdf guibg=grey15
 :hi Cursor guibg=khaki guifg=slategrey
 :hi VertSplit guibg=#c2bfa5 guifg=grey40 gui=none cterm=reverse
 :hi Folded guibg=black guifg=grey40 ctermfg=grey ctermbg=darkgrey
