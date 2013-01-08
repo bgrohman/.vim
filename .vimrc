@@ -4,7 +4,7 @@ call pathogen#helptags()
 
 " ============== General config ====================
 syntax on
-colorscheme slate2
+colorscheme desert2
 set colorcolumn=80
 set nocompatible
 set showmatch
