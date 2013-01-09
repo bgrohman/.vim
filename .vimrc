@@ -17,6 +17,7 @@ set directory=~/.vim-backup
 set history=10000
 set mousemodel=popup
 set showcmd
+set fo=tcqor
 
 " ================= Indentation ====================
 set autoindent
