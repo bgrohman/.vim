@@ -7,3 +7,9 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "bundle/paredit"]
+	path = bundle/paredit
+	url = https://github.com/vim-scripts/paredit.vim.git
+[submodule "bundle/vimclojure"]
+	path = bundle/vimclojure
+	url = https://github.com/vim-scripts/VimClojure.git

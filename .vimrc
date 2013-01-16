@@ -4,6 +4,7 @@ call pathogen#helptags()
 
 " ============== General config ====================
 syntax on
+filetype plugin indent on
 colorscheme desert2
 set colorcolumn=80
 set nocompatible
@@ -90,6 +91,17 @@ map <leader>nt <ESC>:cd %:h<CR>:NERDTree<CR>
 let g:CommandTMaxFiles=20000 " default is 10000
 let g:CommandTMaxDepth=30 " default is 15
 map <leader>j <ESC>:CommandTJump<CR>
+
+" ==================== VimClojure ==================
+let vimclojure#FuzzyIndent=1
+let vimclojure#HighlightBuiltins=1
+let vimclojure#HighlightContrib=1
+let vimclojure#DynamicHighlighting=1
+let vimclojure#ParenRainbow=1
+let vimclojure#WantNailgun = 1
+let vimclojure#NailgunClient = $HOME . "/.vim/lib/vimclojure-nailgun-client/ng"
+let g:paredit_mode = 0
+autocmd BufRead,BufNewFile *.cljs setlocal filetype=clojure
 
 " ====================== Misc ======================
 " Convenient command to see the difference between the current buffer and the
