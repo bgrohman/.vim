@@ -21,7 +21,7 @@ if version > 580
 endif
 let g:colors_name="desert2"
 
-hi Normal	guifg=White guibg=grey20
+hi Normal	guifg=White guibg=grey10
 
 hi ColorColumn guibg=#393939
 hi Pmenu guibg=#444444 guifg=#efefef
@@ -43,7 +43,7 @@ hi IncSearch	guifg=slategrey guibg=khaki
 "hi LineNr
 hi ModeMsg	guifg=goldenrod
 hi MoreMsg	guifg=SeaGreen
-hi NonText	guifg=LightBlue guibg=grey20
+hi NonText	guifg=LightBlue guibg=grey10
 hi Question	guifg=springgreen
 hi Search	guibg=#666666 guifg=#efefef
 hi SpecialKey	guifg=yellowgreen
