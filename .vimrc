@@ -19,6 +19,8 @@ set history=10000
 set mousemodel=popup
 set showcmd
 set fo=tcqor
+set splitbelow
+set splitright
 
 " ================= Indentation ====================
 set autoindent
