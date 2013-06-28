@@ -5,7 +5,7 @@ call pathogen#helptags()
 " ============== General config ====================
 syntax on
 filetype plugin indent on
-colorscheme desert2
+colorscheme monokai
 set colorcolumn=80
 set nocompatible
 set showmatch
@@ -47,6 +47,7 @@ nmap g# g#zz
 set wildmode=longest,list,full
 set wildmenu
 set wildignore=*.o,*.class,CVS,*.pyc,.svn,.git,.gitignore
+imap <C-Space> <C-x><C-o>
 
 " ================= Status Line ====================
 set laststatus=2 "always show
