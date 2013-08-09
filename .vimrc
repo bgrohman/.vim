@@ -21,6 +21,9 @@ set showcmd
 set fo=tcqor
 set splitbelow
 set splitright
+if has("gui_running")
+	set guifont=Menlo:h10
+endif
 
 " ================= Indentation ====================
 set autoindent
