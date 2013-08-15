@@ -64,6 +64,7 @@ set statusline+=%=                                   "right align
 set statusline+=%-14.(%l,%c%V%)\ %<%P                "offset
 
 " ============== General Key Mappings ==============
+cmap w!! %!sudo tee > /dev/null %
 " open vimrc
 map <leader>rc <ESC>:e $MYVIMRC<CR>
 " prev/next buffer
