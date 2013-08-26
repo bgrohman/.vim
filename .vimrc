@@ -49,7 +49,7 @@ nmap g# g#zz
 " ============= Text Completion ====================
 set wildmode=longest,list,full
 set wildmenu
-set wildignore=*.o,*.class,CVS,*.pyc,.svn,.git,.gitignore
+set wildignore=*.o,*.class,CVS,*.pyc,.svn,.git,.gitignore,bin,target
 imap <C-Space> <C-x><C-o>
 
 " ================= Status Line ====================
@@ -87,7 +87,7 @@ map <leader>cd <ESC>:cd %:h<CR>
 nmap <F4> :SyntasticCheck<CR>
 let g:syntastic_check_on_open=1
 let g:syntastic_auto_loc_list=1
-let g:syntastic_mode_map={'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['java']}
+let g:syntastic_mode_map={'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['java','html','css']}
 let g:syntastic_javascript_jslint_conf = "--white --browser --nomen --regexp --plusplus --predef define --predef require"
 
 " ==================== NERDTree ====================
