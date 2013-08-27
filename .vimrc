@@ -97,6 +97,7 @@ map <leader>nt <ESC>:cd %:h<CR>:NERDTree<CR>
 " ==================== Command-T ===================
 let g:CommandTMaxFiles=20000 " default is 10000
 let g:CommandTMaxDepth=30 " default is 15
+let g:CommandTMaxHeight=30 " default is 0 which means no max
 map <leader>j <ESC>:CommandTJump<CR>
 
 " ==================== VimClojure ==================
