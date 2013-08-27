@@ -15,3 +15,6 @@
 	path = bundle/vimclojure
 	url = https://github.com/vim-scripts/VimClojure.git
 	ignore = dirty
+[submodule "bundle/lightline"]
+	path = bundle/lightline
+	url = https://github.com/itchyny/lightline.vim.git
