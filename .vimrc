@@ -25,6 +25,26 @@ if has("gui_running")
 	set guifont=Menlo:h10
 endif
 
+" ================== Sessions ======================
+set viewdir=~/.vim-views
+
+autocmd BufWinLeave *.* mkview
+autocmd VimLeave * NERDTreeClose
+autocmd VimLeave * call SaveSession()
+
+autocmd VimEnter * call LoadSession()
+autocmd BufWinEnter *.* silent loadview
+
+function! SaveSession()
+	execute 'mksession! ~/.vim-sessions/last-session.vim'
+endfunction
+
+function! LoadSession()
+	if argc() == 0
+		execute 'source ~/.vim-sessions/last-session.vim'
+	endif
+endfunction
+
 " ================= Indentation ====================
 set autoindent
 set smartindent
@@ -91,8 +111,7 @@ let g:syntastic_mode_map={'mode': 'active', 'active_filetypes': [], 'passive_fil
 let g:syntastic_javascript_jslint_conf = "--white --browser --nomen --regexp --plusplus --predef define --predef require"
 
 " ==================== NERDTree ====================
-" open at directory of current file
-map <leader>nt <ESC>:cd %:h<CR>:NERDTree<CR>
+map <leader>nt <ESC>:NERDTreeToggle<CR>
 
 " ==================== Command-T ===================
 let g:CommandTMaxFiles=20000 " default is 10000

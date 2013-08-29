@@ -290,7 +290,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink javascriptReserved             Keyword
   HiLink javascriptOperator             Operator
   HiLink javascriptType                 Type
-  HiLink javascriptNull                 Type
+  HiLink javascriptNull                 Keyword
   HiLink javascriptNumber               Number
   HiLink javascriptFloat                Number
   HiLink javascriptBoolean              Boolean
