@@ -102,6 +102,8 @@ vmap <C-C> "+y
 map <leader>r <ESC>:set noconfirm<CR>:bufdo e!<CR>:set confirm<CR>
 " cd to current file's dir
 map <leader>cd <ESC>:cd %:h<CR>
+" list marks
+map <leader>m <ESC>:marks a-zA-Z<CR>
 
 " =================== syntastic ====================
 nmap <F4> :SyntasticCheck<CR>
