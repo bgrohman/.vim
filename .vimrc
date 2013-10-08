@@ -21,6 +21,7 @@ set showcmd
 set fo=tcqor
 set splitbelow
 set splitright
+set scrolloff=3
 if has("gui_running")
 	set guifont=Menlo:h10
 endif
@@ -32,7 +33,7 @@ autocmd BufWinLeave *.* mkview
 autocmd VimLeave * NERDTreeClose
 autocmd VimLeave * call SaveSession()
 
-autocmd VimEnter * call LoadSession()
+" autocmd VimEnter * call LoadSession()
 autocmd BufWinEnter *.* silent loadview
 
 function! SaveSession()
@@ -44,6 +45,12 @@ function! LoadSession()
 		execute 'source ~/.vim-sessions/last-session.vim'
 	endif
 endfunction
+
+function! ClearSession()
+	execute '!echo "" > ~/.vim-sessions/last-session.vim'
+endfunction
+
+map <leader>restore <ESC>:call LoadSession()<CR>
 
 " ================= Indentation ====================
 set autoindent
@@ -104,6 +111,8 @@ map <leader>r <ESC>:set noconfirm<CR>:bufdo e!<CR>:set confirm<CR>
 map <leader>cd <ESC>:cd %:h<CR>
 " list marks
 map <leader>m <ESC>:marks a-zA-Z<CR>
+" commenting a line
+"map <leader><leader> <ESC>gcc
 
 " =================== syntastic ====================
 nmap <F4> :SyntasticCheck<CR>
@@ -151,3 +160,6 @@ map <leader>ff <ESC>:silent !/usr/bin/open -a "/Applications/Firefox.app" '%:p'<
 
 " Open directory of current file in Finder
 map <leader>finder <ESC>:silent !/usr/bin/open '%:p:h'<CR>
+
+map <leader>trunk <ESC>:cd ~/Development/trunk/app<CR>
+map <leader>pplanner <ESC>:cd ~/Development/pplanner/app<CR>
