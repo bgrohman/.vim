@@ -77,7 +77,9 @@ nmap g# g#zz
 set wildmode=longest,list,full
 set wildmenu
 set wildignore=*.o,*.class,CVS,*.pyc,.svn,.git,.gitignore,bin,target
+
 imap <C-Space> <C-x><C-o>
+set omnifunc=syntaxcomplete#Complete
 
 " ================= Status Line ====================
 set laststatus=2 "always show
