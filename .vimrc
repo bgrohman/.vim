@@ -6,7 +6,7 @@ call pathogen#helptags()
 syntax on
 filetype plugin indent on
 colorscheme monokai
-set colorcolumn=80
+set colorcolumn=100
 set nocompatible
 set showmatch
 set ruler
@@ -121,7 +121,7 @@ nmap <F4> :SyntasticCheck<CR>
 let g:syntastic_check_on_open=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map={'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['java','html','css']}
-let g:syntastic_javascript_jslint_conf = "--white --browser --nomen --regexp --plusplus --predef define --predef require"
+let g:syntastic_javascript_jslint_conf = "--white --nomen --regexp --plusplus --predef define --predef require"
 
 " ==================== NERDTree ====================
 map <leader>nt <ESC>:NERDTreeToggle<CR>
@@ -163,5 +163,5 @@ map <leader>ff <ESC>:silent !/usr/bin/open -a "/Applications/Firefox.app" '%:p'<
 " Open directory of current file in Finder
 map <leader>finder <ESC>:silent !/usr/bin/open '%:p:h'<CR>
 
-map <leader>trunk <ESC>:cd ~/Development/trunk/app<CR>
-map <leader>pplanner <ESC>:cd ~/Development/pplanner/app<CR>
+map <leader>trunk <ESC>:cd ~/Development/trunk/app/portal/portlets<CR>
+map <leader>pplanner <ESC>:cd ~/Development/pplanner/app/portal/portlets<CR>
