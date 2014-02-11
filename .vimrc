@@ -121,7 +121,7 @@ nmap <F4> :SyntasticCheck<CR>
 let g:syntastic_check_on_open=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map={'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['java','html','css']}
-let g:syntastic_javascript_jslint_conf = "--white --nomen --regexp --plusplus --predef define --predef require"
+let g:syntastic_javascript_jslint_conf = "--white --nomen --regexp --plusplus --unparam --browser --todo --predef define --predef require"
 
 " =================== jsbeautify ===================
 let g:config_Beautifier={'js': {'indent_with_tabs': 'true', 'max_preserve_newlines': 2, 'keep_array_indentation': 'true'}}
