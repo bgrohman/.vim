@@ -50,7 +50,8 @@ function! ClearSession()
 	execute '!echo "" > ~/.vim-sessions/last-session.vim'
 endfunction
 
-map <leader>restore <ESC>:call LoadSession()<CR>
+command! Restore call LoadSession()
+map <leader>r <ESC>:call LoadSession()<CR>
 
 " ================= Indentation ====================
 set autoindent
@@ -107,8 +108,6 @@ map <S-right> <C-W>>1
 "nmap <C-V> "+gP
 "imap <C-V> <ESC><C-V>i
 vmap <C-C> "+y
-" Reload file in current buffer
-map <leader>r <ESC>:set noconfirm<CR>:bufdo e!<CR>:set confirm<CR>
 " cd to current file's dir
 map <leader>cd <ESC>:cd %:h<CR>
 " list marks
@@ -161,11 +160,14 @@ map <leader>diff <ESC>:DiffOrig<CR>
 autocmd! BufWritePost .vimrc source %
 
 " Open current file in browsers
-map <leader>chrome <ESC>:silent !/usr/bin/open -a "/Applications/Google Chrome.app" '%:p'<CR>
-map <leader>ff <ESC>:silent !/usr/bin/open -a "/Applications/Firefox.app" '%:p'<CR>
+command! Chrome silent !/usr/bin/open -a "/Applications/Google Chrome.app" '%:p'
+command! Firefox silent !/usr/bin/open -a "/Applications/Firefox.app" '%:p'
 
 " Open directory of current file in Finder
-map <leader>finder <ESC>:silent !/usr/bin/open '%:p:h'<CR>
+command! Finder silent !/usr/bin/open '%:p:h'
 
-map <leader>trunk <ESC>:cd ~/Development/trunk/app/portal/portlets<CR>
-map <leader>pplanner <ESC>:cd ~/Development/pplanner/app/portal/portlets<CR>
+command! Trunk cd ~/Development/trunk/app/portal/portlets
+command! PPlanner cd ~/Development/pplanner/app/portal/portlets
+
+" Snowpocalypse
+let g:snowpocalypse_home="/Users/bgrohman/Dropbox/Work/IEX/snowpocalypse/snowpocalypse"
