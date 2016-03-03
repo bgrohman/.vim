@@ -15,6 +15,7 @@ set nowrap
 set backup
 set backupdir=~/.vim-backup
 set directory=~/.vim-backup
+let g:netrw_home = "/Users/bgrohman/"
 set history=10000
 set mousemodel=popup
 set showcmd
@@ -23,35 +24,35 @@ set splitbelow
 set splitright
 set scrolloff=3
 if has("gui_running")
-	set guifont=Menlo:h10
+	set guifont=Menlo:h11
 endif
 
 " ================== Sessions ======================
-set viewdir=~/.vim-views
+" set viewdir=~/.vim-views
 
-autocmd BufWinLeave *.* mkview
-autocmd VimLeave * NERDTreeClose
-autocmd VimLeave * call SaveSession()
+" autocmd BufWinLeave *.* mkview
+" autocmd VimLeave * NERDTreeClose
+" autocmd VimLeave * call SaveSession()
 
-" autocmd VimEnter * call LoadSession()
-autocmd BufWinEnter *.* silent loadview
+" " autocmd VimEnter * call LoadSession()
+" autocmd BufWinEnter *.* silent loadview
 
-function! SaveSession()
-	execute 'mksession! ~/.vim-sessions/last-session.vim'
-endfunction
+" function! SaveSession()
+" 	execute 'mksession! ~/.vim-sessions/last-session.vim'
+" endfunction
 
-function! LoadSession()
-	if argc() == 0
-		execute 'source ~/.vim-sessions/last-session.vim'
-	endif
-endfunction
+" function! LoadSession()
+" 	if argc() == 0
+" 		execute 'source ~/.vim-sessions/last-session.vim'
+" 	endif
+" endfunction
 
-function! ClearSession()
-	execute '!echo "" > ~/.vim-sessions/last-session.vim'
-endfunction
+" function! ClearSession()
+" 	execute '!echo "" > ~/.vim-sessions/last-session.vim'
+" endfunction
 
-command! Restore call LoadSession()
-map <leader>r <ESC>:call LoadSession()<CR>
+" command! Restore call LoadSession()
+" map <leader>r <ESC>:call LoadSession()<CR>
 
 " ================= Indentation ====================
 set autoindent
@@ -87,11 +88,13 @@ set laststatus=2 "always show
 set statusline=
 set statusline+=%f\                                  "file name
 set statusline+=%h%1*%m%r%w%0*                       "flags
-set statusline+=%#warningmsg#                        "Syntastic
-set statusline+=%{SyntasticStatuslineFlag()}         "Syntastic
-set statusline+=%*                                   "Syntastic
+" set statusline+=%#warningmsg#                        "Syntastic
+" set statusline+=%{SyntasticStatuslineFlag()}         "Syntastic
+" set statusline+=%*                                   "Syntastic
 set statusline+=%=                                   "right align
 set statusline+=%-14.(%l,%c%V%)\ %<%P                "offset
+
+au WinEnter * hi StatusLine term=reverse ctermbg=6 guibg=LightCyan guifg=Black
 
 " ============== General Key Mappings ==============
 cmap w!! %!sudo tee > /dev/null %
@@ -115,17 +118,6 @@ map <leader>m <ESC>:marks a-zA-Z<CR>
 " commenting a line
 "map <leader><leader> <ESC>gcc
 
-" =================== syntastic ====================
-nmap <F4> :SyntasticCheck<CR>
-let g:syntastic_check_on_open=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_mode_map={'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['java','html','css']}
-let g:syntastic_javascript_jslint_conf = "--white --nomen --regexp --plusplus --unparam --browser --todo --predef define --predef require"
-
-" =================== jsbeautify ===================
-let g:config_Beautifier={'js': {'indent_with_tabs': 'true', 'max_preserve_newlines': 2, 'keep_array_indentation': 'true'}}
-autocmd FileType javascript noremap <buffer>  <C-f> :call JsBeautify()<CR>
-
 " ==================== NERDTree ====================
 map <leader>nt <ESC>:NERDTreeToggle<CR>
 
@@ -134,17 +126,6 @@ let g:CommandTMaxFiles=20000 " default is 10000
 let g:CommandTMaxDepth=30 " default is 15
 let g:CommandTMaxHeight=30 " default is 0 which means no max
 map <leader>j <ESC>:CommandTJump<CR>
-
-" ==================== VimClojure ==================
-let vimclojure#FuzzyIndent=1
-let vimclojure#HighlightBuiltins=1
-let vimclojure#HighlightContrib=1
-let vimclojure#DynamicHighlighting=1
-let vimclojure#ParenRainbow=1
-let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = $HOME . "/.vim/lib/vimclojure-nailgun-client/ng"
-let g:paredit_mode = 0
-autocmd BufRead,BufNewFile *.cljs setlocal filetype=clojure
 
 " ====================== Misc ======================
 " Convenient command to see the difference between the current buffer and the
@@ -161,13 +142,6 @@ autocmd! BufWritePost .vimrc source %
 
 " Open current file in browsers
 command! Chrome silent !/usr/bin/open -a "/Applications/Google Chrome.app" '%:p'
-command! Firefox silent !/usr/bin/open -a "/Applications/Firefox.app" '%:p'
 
 " Open directory of current file in Finder
 command! Finder silent !/usr/bin/open '%:p:h'
-
-command! Trunk cd ~/Development/trunk/app/portal/portlets
-command! PPlanner cd ~/Development/pplanner/app/portal/portlets
-
-" Snowpocalypse
-let g:snowpocalypse_home="/Users/bgrohman/Dropbox/Work/IEX/snowpocalypse/snowpocalypse"
