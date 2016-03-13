@@ -2,10 +2,21 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-" ============== General config ====================
+" ============== Colorscheme ==============
 syntax on
+"colorscheme monokai
+
+colorscheme eink
+set background=light
+hi String gui=bold term=bold cterm=bold
+hi Cursor guifg=Black guibg=Pink
+hi Search guibg=Pink ctermfg=6 ctermbg=0
+hi IncSearch guibg=Pink ctermfg=6 ctermbg=0
+hi ColorColumn guibg=snow2
+hi StatusLineNC term=reverse ctermbg=0 ctermfg=7 guibg=Black guifg=DarkGray
+
+" ============== General config ====================
 filetype plugin indent on
-colorscheme monokai
 set colorcolumn=100
 set nocompatible
 set showmatch
@@ -69,8 +80,6 @@ set statusline+=%h%1*%m%r%w%0*                       "flags
 set statusline+=%=                                   "right align
 set statusline+=%-7.(win:%{winnr()}%)                "window number
 set statusline+=%-14.(%l,%c%V%)\ %<%P                "offset
-
-au WinEnter * hi StatusLine term=reverse ctermbg=6 guibg=LightCyan guifg=Black
 
 " ============== General Key Mappings ==============
 cmap w!! %!sudo tee > /dev/null %
