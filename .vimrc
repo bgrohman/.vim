@@ -23,36 +23,14 @@ set fo=tcqor
 set splitbelow
 set splitright
 set scrolloff=3
+
 if has("gui_running")
-	set guifont=Menlo:h11
+	if has("gui_macvim")
+		set guifont=Menlo:h11
+	else
+		set guifont=Consolas:h10
+	endif
 endif
-
-" ================== Sessions ======================
-" set viewdir=~/.vim-views
-
-" autocmd BufWinLeave *.* mkview
-" autocmd VimLeave * NERDTreeClose
-" autocmd VimLeave * call SaveSession()
-
-" " autocmd VimEnter * call LoadSession()
-" autocmd BufWinEnter *.* silent loadview
-
-" function! SaveSession()
-" 	execute 'mksession! ~/.vim-sessions/last-session.vim'
-" endfunction
-
-" function! LoadSession()
-" 	if argc() == 0
-" 		execute 'source ~/.vim-sessions/last-session.vim'
-" 	endif
-" endfunction
-
-" function! ClearSession()
-" 	execute '!echo "" > ~/.vim-sessions/last-session.vim'
-" endfunction
-
-" command! Restore call LoadSession()
-" map <leader>r <ESC>:call LoadSession()<CR>
 
 " ================= Indentation ====================
 set autoindent
