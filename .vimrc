@@ -66,10 +66,8 @@ set laststatus=2 "always show
 set statusline=
 set statusline+=%f\                                  "file name
 set statusline+=%h%1*%m%r%w%0*                       "flags
-" set statusline+=%#warningmsg#                        "Syntastic
-" set statusline+=%{SyntasticStatuslineFlag()}         "Syntastic
-" set statusline+=%*                                   "Syntastic
 set statusline+=%=                                   "right align
+set statusline+=%-7.(win:%{winnr()}%)                "window number
 set statusline+=%-14.(%l,%c%V%)\ %<%P                "offset
 
 au WinEnter * hi StatusLine term=reverse ctermbg=6 guibg=LightCyan guifg=Black
