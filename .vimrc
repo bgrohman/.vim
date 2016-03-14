@@ -27,14 +27,13 @@ set fo=tcqor
 set splitbelow
 set splitright
 set scrolloff=3
+let g:netrw_home=$HOME
 
 if has("unix")
 	" open vimrc
 	map <leader>rc <ESC>:e $MYVIMRC<CR>
 
 	if has("mac")
-		let g:netrw_home = "$HOME"
-
 		" Open current file in browsers
 		command! Chrome silent !/usr/bin/open -a "/Applications/Google Chrome.app" '%:p'
 
@@ -122,12 +121,6 @@ map <leader>m <ESC>:marks a-zA-Z<CR>
 
 " ==================== NERDTree ====================
 map <leader>nt <ESC>:NERDTreeToggle<CR>
-
-" ==================== Command-T ===================
-let g:CommandTMaxFiles=20000 " default is 10000
-let g:CommandTMaxDepth=30 " default is 15
-let g:CommandTMaxHeight=30 " default is 0 which means no max
-map <leader>j <ESC>:CommandTJump<CR>
 
 " ====================== Misc ======================
 " Convenient command to see the difference between the current buffer and the
