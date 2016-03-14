@@ -194,6 +194,8 @@ if &background == 'light'
 	hi Statement gui=bold term=bold cterm=bold
 	hi Identifier gui=bold term=bold cterm=bold
 	hi Cursor guifg=Black guibg=Pink
+	hi CursorLine guifg=Black guibg=snow1
+	hi CursorLineNr guifg=Black
 	hi Search guibg=Pink ctermfg=6 ctermbg=0
 	hi IncSearch guibg=Pink ctermfg=6 ctermbg=0
 	hi ColorColumn guibg=snow2
@@ -206,6 +208,8 @@ else
 	hi Constant gui=NONE term=NONE cterm=NONE guifg=NONE ctermfg=NONE
 	hi Special gui=NONE term=NONE cterm=underline guifg=NONE ctermfg=NONE
 	hi Cursor guifg=Black guibg=Pink
+	hi CursorLine guibg=#1d1f21
+	hi CursorLineNr guifg=grey70
 	hi Search guifg=Pink guibg=Black ctermfg=6 ctermbg=0
 	hi IncSearch guifg=Pink ctermfg=0 ctermbg=6
 	hi Visual guifg=Pink guibg=Black ctermfg=6 ctermbg=0

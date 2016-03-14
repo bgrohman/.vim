@@ -5,3 +5,6 @@
 	path = bundle/vimclojure
 	url = https://github.com/vim-scripts/VimClojure.git
 	ignore = dirty
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = https://github.com/ctrlpvim/ctrlp.vim.git

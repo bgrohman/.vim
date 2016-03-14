@@ -48,6 +48,8 @@ else
 endif
 
 if has("gui_running")
+	set cursorline
+
 	if has("gui_macvim")
 		set guifont=Menlo:h11
 	else
@@ -101,23 +103,26 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P                "offset
 
 " ============== General Key Mappings ==============
 cmap w!! %!sudo tee > /dev/null %
+
 " prev/next buffer
 map <right> <ESC>:bn<CR>
 map <left> <ESC>:bp<CR>
+
 " window resizing
 map <S-up> <ESC>:resize +1<CR>
 map <S-down> <ESC>:resize -1<CR>
 map <S-left> <C-W><1
 map <S-right> <C-W>>1
+
 "nmap <C-V> "+gP
 "imap <C-V> <ESC><C-V>i
 vmap <C-C> "+y
+
 " cd to current file's dir
 map <leader>cd <ESC>:cd %:h<CR>
+
 " list marks
 map <leader>m <ESC>:marks a-zA-Z<CR>
-" commenting a line
-"map <leader><leader> <ESC>gcc
 
 " ==================== NERDTree ====================
 map <leader>nt <ESC>:NERDTreeToggle<CR>
