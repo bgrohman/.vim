@@ -189,6 +189,7 @@ else
 endif
 
 " Bryan's customizations
+hi Comment gui=italic
 if &background == 'light'
 	hi Statement gui=bold term=bold cterm=bold
 	hi Identifier gui=bold term=bold cterm=bold
