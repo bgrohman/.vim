@@ -6,18 +6,12 @@ call pathogen#helptags()
 syntax on
 "colorscheme monokai
 
-colorscheme eink
-set background=light
-hi String gui=bold term=bold cterm=bold
-hi Cursor guifg=Black guibg=Pink
-hi Search guibg=Pink ctermfg=6 ctermbg=0
-hi IncSearch guibg=Pink ctermfg=6 ctermbg=0
-hi ColorColumn guibg=snow2
-hi StatusLineNC term=reverse ctermbg=0 ctermfg=7 guibg=Black guifg=DarkGray
+set background=dark
+colorscheme einkBryan
 
 " ============== General config ====================
 filetype plugin indent on
-set colorcolumn=100
+set colorcolumn=101
 set nocompatible
 set showmatch
 set ruler
