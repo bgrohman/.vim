@@ -28,10 +28,29 @@ set splitbelow
 set splitright
 set scrolloff=3
 
+if has("unix")
+	" open vimrc
+	map <leader>rc <ESC>:e $MYVIMRC<CR>
+
+	if has("mac")
+		let g:netrw_home = "$HOME"
+
+		" Open current file in browsers
+		command! Chrome silent !/usr/bin/open -a "/Applications/Google Chrome.app" '%:p'
+
+		" Open directory of current file in Finder
+		command! Finder silent !/usr/bin/open '%:p:h'
+	endif
+else
+	set fileformats=unix,dos
+
+	" open vimrc
+	map <leader>rc <ESC>:e ~/development/git_repos/.vim/.vimrc<CR>
+endif
+
 if has("gui_running")
 	if has("gui_macvim")
 		set guifont=Menlo:h11
-		let g:netrw_home = "/Users/bgrohman/"
 	else
 		set guifont=Consolas:h10
 		set guioptions-=T
@@ -83,8 +102,6 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P                "offset
 
 " ============== General Key Mappings ==============
 cmap w!! %!sudo tee > /dev/null %
-" open vimrc
-map <leader>rc <ESC>:e $MYVIMRC<CR>
 " prev/next buffer
 map <right> <ESC>:bn<CR>
 map <left> <ESC>:bp<CR>
@@ -124,9 +141,3 @@ map <leader>diff <ESC>:DiffOrig<CR>
 
 " Auto-load vimrc changes
 autocmd! BufWritePost .vimrc source %
-
-" Open current file in browsers
-command! Chrome silent !/usr/bin/open -a "/Applications/Google Chrome.app" '%:p'
-
-" Open directory of current file in Finder
-command! Finder silent !/usr/bin/open '%:p:h'
