@@ -20,7 +20,6 @@ set nowrap
 set backup
 set backupdir=~/.vim-backup
 set directory=~/.vim-backup
-let g:netrw_home = "/Users/bgrohman/"
 set history=10000
 set mousemodel=popup
 set showcmd
@@ -32,6 +31,7 @@ set scrolloff=3
 if has("gui_running")
 	if has("gui_macvim")
 		set guifont=Menlo:h11
+		let g:netrw_home = "/Users/bgrohman/"
 	else
 		set guifont=Consolas:h10
 		set guioptions-=T
