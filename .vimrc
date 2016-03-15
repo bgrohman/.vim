@@ -11,7 +11,6 @@ colorscheme einkBryan
 
 " ============== General config ====================
 filetype plugin indent on
-set colorcolumn=101
 set nocompatible
 set showmatch
 set ruler
