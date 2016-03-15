@@ -196,6 +196,7 @@ if &background == 'light'
 	hi Cursor guifg=Black guibg=Pink
 	hi CursorLine guifg=Black guibg=snow1
 	hi CursorLineNr guifg=Black
+	hi NonText guifg=DarkGray cterm=NONE ctermfg=7
 	hi Search guibg=Pink ctermfg=6 ctermbg=0
 	hi IncSearch guibg=Pink ctermfg=6 ctermbg=0
 	hi ColorColumn guibg=snow2
@@ -210,6 +211,7 @@ else
 	hi Cursor guifg=Black guibg=Pink
 	hi CursorLine guibg=#1d1f21
 	hi CursorLineNr guifg=grey70
+	hi NonText guifg=grey70 cterm=NONE ctermfg=8
 	hi Search guifg=Pink guibg=Black ctermfg=6 ctermbg=0
 	hi IncSearch guifg=Pink ctermfg=0 ctermbg=6
 	hi Visual guifg=Pink guibg=Black ctermfg=6 ctermbg=0

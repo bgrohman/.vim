@@ -15,7 +15,6 @@ colorscheme einkBryan
 autocmd! BufWritePost .vimrc source %
 
 filetype plugin indent on
-set colorcolumn=101
 set nocompatible
 set showmatch
 set ruler
