@@ -130,7 +130,10 @@ map <leader>m <ESC>:marks a-zA-Z<CR>
 " ==================== NERDTree ====================
 map <leader>nt <ESC>:NERDTreeToggle<CR>
 
-" ====================== Misc ======================
+" ====================== Diff ======================
+" Diff two buffers in current window
+command! DiffBuffs execute ":windo diffthis"
+
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 if !exists(":DiffOrig")
