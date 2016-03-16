@@ -45,7 +45,7 @@ if has("unix")
     endif
 else
     set fileformats=unix,dos
-    map <leader>dos <ESC>:e ++ff=dos<CR>
+    command! DosFormat execute ":e ++ff=dos"
 
     " open vimrc
     map <leader>rc <ESC>:e ~/development/git_repos/.vim/.vimrc<CR>
