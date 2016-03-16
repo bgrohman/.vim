@@ -45,6 +45,7 @@ if has("unix")
     endif
 else
     set fileformats=unix,dos
+    map <leader>dos <ESC>:e ++ff=dos<CR>
 
     " open vimrc
     map <leader>rc <ESC>:e ~/development/git_repos/.vim/.vimrc<CR>
@@ -71,6 +72,7 @@ set autoindent
 set smartindent
 set tabstop=4
 set shiftwidth=4
+set expandtab
 
 autocmd BufNewFile,BufRead *.less set filetype=css
 
