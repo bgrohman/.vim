@@ -6,7 +6,7 @@ call pathogen#helptags()
 syntax on
 "colorscheme monokai
 
-set background=dark
+set background=light
 colorscheme einkBryan
 
 " ============== General config ====================
@@ -33,37 +33,37 @@ set scrolloff=3
 let g:netrw_home=$HOME
 
 if has("unix")
-	" open vimrc
-	map <leader>rc <ESC>:e $MYVIMRC<CR>
+    " open vimrc
+    map <leader>rc <ESC>:e $MYVIMRC<CR>
 
-	if has("mac")
-		" Open current file in browsers
-		command! Chrome silent !/usr/bin/open -a "/Applications/Google Chrome.app" '%:p'
+    if has("mac")
+        " Open current file in browsers
+        command! Chrome silent !/usr/bin/open -a "/Applications/Google Chrome.app" '%:p'
 
-		" Open directory of current file in Finder
-		command! Finder silent !/usr/bin/open '%:p:h'
-	endif
+        " Open directory of current file in Finder
+        command! Finder silent !/usr/bin/open '%:p:h'
+    endif
 else
-	set fileformats=unix,dos
+    set fileformats=unix,dos
 
-	" open vimrc
-	map <leader>rc <ESC>:e ~/development/git_repos/.vim/.vimrc<CR>
+    " open vimrc
+    map <leader>rc <ESC>:e ~/development/git_repos/.vim/.vimrc<CR>
 endif
 
 if has("gui_running")
-	set cursorline
+    set cursorline
 
-	if has("gui_macvim")
-		set guifont=Menlo:h11
-	else
-		set guifont=Consolas:h10
-		set guioptions-=T
-		if !exists("g:already_set_initial_dimensions")
-			set lines=50
-			set columns=120
-			let already_set_initial_dimensions=1
-		endif
-	endif
+    if has("gui_macvim")
+        set guifont=Menlo:h11
+    else
+        set guifont=Consolas:h10
+        set guioptions-=T
+        if !exists("g:already_set_initial_dimensions")
+            set lines=50
+            set columns=120
+            let already_set_initial_dimensions=1
+        endif
+    endif
 endif
 
 " ================= Indentation ====================
@@ -71,8 +71,8 @@ set autoindent
 set smartindent
 set tabstop=4
 set shiftwidth=4
-set noexpandtab
-autocmd FileType * setlocal noet
+
+autocmd BufNewFile,BufRead *.less set filetype=css
 
 " ==================== Search ======================
 set incsearch
@@ -138,6 +138,6 @@ command! DiffBuffs execute ":windo diffthis"
 " file it was loaded from, thus the changes you made.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+          \ | wincmd p | diffthis
 endif
 map <leader>diff <ESC>:DiffOrig<CR>
