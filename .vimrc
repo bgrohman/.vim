@@ -7,6 +7,9 @@ syntax on
 "colorscheme monokai
 
 set background=light
+if !has("gui_running")
+    set background=dark
+endif
 colorscheme einkBryan
 
 " ============== General config ====================
