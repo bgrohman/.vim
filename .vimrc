@@ -6,7 +6,7 @@ call pathogen#helptags()
 syntax on
 "colorscheme monokai
 
-set background=light
+set background=dark
 if !has("gui_running")
     set background=dark
 endif
@@ -144,9 +144,6 @@ map <leader>cd <ESC>:cd %:h<CR>
 
 " list marks
 map <leader>m <ESC>:marks a-zA-Z<CR>
-
-" ==================== Fugitive ====================
-command! Gdiffall execute ":Gtabedit! diff"
 
 " ==================== NERDTree ====================
 map <leader>nt <ESC>:NERDTreeToggle<CR>
