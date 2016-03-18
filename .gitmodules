@@ -7,3 +7,6 @@
 [submodule "bundle/bg-sessions"]
 	path = bundle/bg-sessions
 	url = https://github.com/bgrohman/.vim-bg-sessions.git
+[submodule "bundle/signature"]
+	path = bundle/signature
+	url = https://github.com/kshenoy/vim-signature.git
