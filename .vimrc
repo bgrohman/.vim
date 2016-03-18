@@ -49,6 +49,7 @@ if has("unix")
 else
     set fileformats=unix,dos
     command! DosFormat execute ":e ++ff=dos"
+    command! Paste call feedkeys('"+gP')
 
     " open vimrc
     map <leader>rc <ESC>:e ~/development/git_repos/.vim/.vimrc<CR>
@@ -100,11 +101,22 @@ set wildignore=*.o,*.class,CVS,*.pyc,.svn,.git,.gitignore,bin,target
 imap <C-Space> <C-x><C-o>
 set omnifunc=syntaxcomplete#Complete
 
+" ================= Syntastic ======================
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+
+let g:syntastic_javascript_checkers = ['jshint']
+
 " ================= Status Line ====================
 set laststatus=2 "always show
 set statusline=
 set statusline+=%f\                                  "file name
 set statusline+=%h%1*%m%r%w%0*                       "flags
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%=                                   "right align
 set statusline+=%-7.(win:%{winnr()}%)                "window number
 set statusline+=%-14.(%l,%c%V%)\ %<%P                "offset
@@ -131,6 +143,9 @@ map <leader>cd <ESC>:cd %:h<CR>
 
 " list marks
 map <leader>m <ESC>:marks a-zA-Z<CR>
+
+" ==================== Fugitive ====================
+command! Gdiffall execute ":Gtabedit! diff"
 
 " ==================== NERDTree ====================
 map <leader>nt <ESC>:NERDTreeToggle<CR>
