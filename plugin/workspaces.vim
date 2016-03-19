@@ -5,7 +5,12 @@ function! workspaces#WfoWebapp()
 endfunction
 
 function! workspaces#Vim()
-    let repo_base_path = "~/development/git_repos/.vim"
+    if has("unix")
+        let repo_base_path = "~/.vim"
+    else
+        let repo_base_path = "~/development/git_repos/.vim"
+    endif
+
     execute "cd " . repo_base_path
     execute "set path=.," . repo_base_path
     execute ":e " . repo_base_path . "/.vimrc"
