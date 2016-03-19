@@ -191,8 +191,9 @@ endif
 " Bryan's customizations
 hi Comment gui=italic
 if &background == 'light'
-	hi Statement gui=bold term=bold cterm=bold
-	hi Identifier gui=bold term=bold cterm=bold
+	hi Statement gui=NONE term=bold cterm=bold guifg=grey50
+	hi Identifier gui=NONE term=bold cterm=bold guifg=grey50
+	hi Keyword gui=NONE guifg=grey50
 	hi Cursor guifg=Black guibg=Pink
 	hi CursorLine guifg=Black guibg=#f4f1f1
 	hi CursorLineNr guifg=Black
@@ -202,9 +203,9 @@ if &background == 'light'
 	hi ColorColumn guibg=snow2
 	hi StatusLineNC term=reverse ctermbg=0 ctermfg=7 guibg=Black guifg=DarkGray
 else
-	hi Statement gui=bold term=bold cterm=bold guifg=White ctermfg=255
-	hi Identifier gui=bold term=bold cterm=bold guifg=White ctermfg=255
-	hi Keyword gui=bold term=bold cterm=bold guifg=White ctermfg=255
+	hi Statement gui=NONE term=NONE cterm=NONE guifg=White ctermfg=255
+	hi Identifier gui=NONE term=NONE cterm=NONE guifg=White ctermfg=255
+	hi Keyword gui=NONE term=NONE cterm=NONE guifg=White ctermfg=255
 	hi Type gui=NONE term=NONE cterm=NONE guifg=NONE ctermfg=NONE
 	hi Constant gui=NONE term=NONE cterm=NONE guifg=NONE ctermfg=NONE
 	hi Special gui=NONE term=NONE cterm=underline guifg=NONE ctermfg=NONE
