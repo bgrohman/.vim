@@ -6,12 +6,12 @@ command! NewOnRight execute ":botright vnew"
 
 "========= File Browsing =========
 function! BrowseRight()
-    execute ":botright 35vnew"
+    execute ":botright vnew"
     execute ":Explore"
 endfunction
 
 function! BrowseLeft()
-    execute ":topleft 35vnew"
+    execute ":topleft vnew"
     execute ":Explore"
 endfunction
 
