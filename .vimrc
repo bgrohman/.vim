@@ -159,3 +159,12 @@ if !exists(":DiffOrig")
           \ | wincmd p | diffthis
 endif
 map <leader>diff <ESC>:DiffOrig<CR>
+
+" ==================== ScratchPad ====================
+let g:scratch_pad_file = "~/.vim-scratch-pad"
+function! OpenScratchPad()
+   let path = expand(g:scratch_pad_file, ":p")
+   execute ":topleft 15new"
+   execute ":e " . path
+endfunction
+command! ScratchPad call OpenScratchPad()
