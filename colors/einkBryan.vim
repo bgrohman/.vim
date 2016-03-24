@@ -198,10 +198,13 @@ if &background == 'light'
 	hi CursorLine guifg=Black guibg=#f4f1f1
 	hi CursorLineNr guifg=Black
 	hi NonText guifg=DarkGray cterm=NONE ctermfg=7
-	hi Search guibg=Pink ctermfg=6 ctermbg=0
-	hi IncSearch guibg=Pink ctermfg=6 ctermbg=0
+	hi Search guifg=LightCyan guibg=Black ctermfg=6 ctermbg=0
+	hi IncSearch guifg=LightCyan guibg=Black ctermfg=6 ctermbg=0
 	hi ColorColumn guibg=snow2
 	hi StatusLineNC term=reverse ctermbg=0 ctermfg=7 guibg=Black guifg=DarkGray
+        hi Pmenu guibg=LightCyan guifg=Black
+        hi PmenuSel guibg=Pink guifg=Black
+        hi WildMenu gui=NONE guifg=Black guibg=LightCyan cterm=NONE ctermfg=0 ctermbg=6
 else
 	hi Statement gui=NONE term=NONE cterm=NONE guifg=White ctermfg=255
 	hi Identifier gui=NONE term=NONE cterm=NONE guifg=White ctermfg=255
@@ -213,9 +216,12 @@ else
 	hi CursorLine guibg=#242629 cterm=NONE ctermbg=0
 	hi CursorLineNr guifg=grey70 cterm=NONE ctermfg=3
 	hi NonText guifg=grey70 cterm=NONE ctermfg=8
-	hi Search guifg=Pink guibg=Black ctermfg=6 ctermbg=0
-	hi IncSearch guifg=Pink ctermfg=0 ctermbg=6
+	hi Search guifg=LightCyan guibg=Black ctermfg=6 ctermbg=0
+	hi IncSearch guifg=LightCyan ctermfg=0 ctermbg=6
 	hi Visual guifg=Pink guibg=Black ctermfg=6 ctermbg=0
 	hi ColorColumn ctermbg=8
 	hi StatusLineNC term=reverse ctermbg=7 ctermfg=8 guibg=DarkGrey guifg=grey30
+        hi Pmenu guibg=LightCyan guifg=Black
+        hi PmenuSel guibg=Pink guifg=Black
+        hi WildMenu gui=NONE guifg=Black guibg=LightCyan cterm=NONE ctermfg=0 ctermbg=6
 endif
