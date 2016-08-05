@@ -3,14 +3,13 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " ============== Colorscheme ==============
-syntax on
-"colorscheme monokai
-
 set background=dark
 if !has("gui_running")
     set background=dark
 endif
-colorscheme einkBryan
+" colorscheme einkBryan
+syntax on
+colorscheme monokai
 
 " ============== General config ====================
 
@@ -60,6 +59,14 @@ if has("gui_running")
 
     if has("gui_macvim")
         set guifont=Menlo:h11
+    elseif has("unix")
+        set guifont=Monospace\ 10 
+        set guioptions-=T
+        if !exists("g:already_set_initial_dimensions")
+            set lines=60
+            set columns=120
+            let already_set_initial_dimensions=1
+        endif
     else
         set guifont=Consolas:h10
         set guioptions-=T
