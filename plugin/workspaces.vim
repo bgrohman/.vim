@@ -16,8 +16,15 @@ function! workspaces#Vim()
     execute ":e " . repo_base_path . "/.vimrc"
 endfunction
 
+function! workspaces#BowerComponents()
+    let repo_base_path = "~/development/git_repos/bower_components"
+    execute "cd " . repo_base_path
+    execute "set path=."
+endfunction
+
 command! WorkspaceWfoWebapp call workspaces#WfoWebapp()
 command! WorkspaceVim call workspaces#Vim()
+command! WorkspaceBower call workspaces#BowerComponents()
 
 " ================ Opening JS Tests ================
 let s:JS_UNIT_TEST = 1
