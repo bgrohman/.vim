@@ -6,6 +6,7 @@ call pathogen#helptags()
 syntax on
 set background=dark
 colorscheme monokai
+highlight StatusLineNC gui=italic guifg=#999999 ctermfg=grey
 
 " set background=light
 " colorscheme einkBryan
@@ -121,32 +122,13 @@ let g:syntastic_javascript_checkers = ['jshint']
 " ================= Status Line ====================
 set laststatus=2 "always show
 set statusline=
-set statusline+=%f\                                  "file name
+set statusline+=%f%*\               "file name
 set statusline+=%h%1*%m%r%w%0*                       "flags
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=%=                                   "right align
-set statusline+=%-7.(win:%{winnr()}%)                "window number
-set statusline+=%-14.(%l,%c%V%)\ %<%P                "offset
-
-" =================== Lightline ==================== 
-let g:lightline = {
-    \ 'colorscheme': 'wombat',
-    \ 'component_function': {
-    \   'winnr': 'LightLineWindowNumber'
-    \ },
-    \ 'active': {
-    \   'right': [['lineinfo'], ['percent'], ['winnr', 'fileformat', 'fileencoding', 'filetype']]
-    \ },
-    \ 'inactive': {
-    \   'right': [['lineinfo'], ['percent'], ['winnr']]
-    \ }
-    \ }
-
-function! LightLineWindowNumber()
-    return 'w:' . winnr()
-endfunction
+set statusline+=%10.(w:%{winnr()}\ l:%l%)\ %<%P      "window number, line number, percentage
 
 " ============== General Key Mappings ==============
 cmap w!! %!sudo tee > /dev/null %

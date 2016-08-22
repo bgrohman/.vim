@@ -10,6 +10,3 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle/lightline"]
-	path = bundle/lightline
-	url = https://github.com/itchyny/lightline.vim.git
