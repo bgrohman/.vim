@@ -153,9 +153,6 @@ map <leader>cd <ESC>:cd %:h<CR>
 " list marks
 map <leader>m <ESC>:marks a-zA-Z<CR>
 
-" ==================== NERDTree ====================
-map <leader>nt <ESC>:NERDTreeToggle<CR>
-
 " ====================== Diff ======================
 " Diff two buffers in current window
 command! DiffBuffs execute ":windo diffthis"
