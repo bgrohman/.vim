@@ -3,13 +3,13 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " ============== Colorscheme ==============
-set background=dark
-if !has("gui_running")
-    set background=dark
-endif
-" colorscheme einkBryan
 syntax on
+set background=dark
 colorscheme monokai
+
+" set background=light
+" colorscheme einkBryan
+" colorscheme pencil
 
 " ============== General config ====================
 
