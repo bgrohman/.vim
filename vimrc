@@ -48,7 +48,6 @@ if has("unix")
 else
     set fileformats=unix,dos
     command! DosFormat execute ":e ++ff=dos"
-    command! Paste call feedkeys('"+gP')
 
     " open vimrc
     map <leader>rc <ESC>:e ~/development/git_repos/.vim/.vimrc<CR>
@@ -77,6 +76,8 @@ if has("gui_running")
         endif
     endif
 endif
+
+command! Paste call feedkeys('"+gP')
 
 " ================= Indentation ====================
 set autoindent
@@ -128,6 +129,24 @@ set statusline+=%*
 set statusline+=%=                                   "right align
 set statusline+=%-7.(win:%{winnr()}%)                "window number
 set statusline+=%-14.(%l,%c%V%)\ %<%P                "offset
+
+" =================== Lightline ==================== 
+let g:lightline = {
+    \ 'colorscheme': 'wombat',
+    \ 'component_function': {
+    \   'winnr': 'LightLineWindowNumber'
+    \ },
+    \ 'active': {
+    \   'right': [['lineinfo'], ['percent'], ['winnr', 'fileformat', 'fileencoding', 'filetype']]
+    \ },
+    \ 'inactive': {
+    \   'right': [['lineinfo'], ['percent'], ['winnr']]
+    \ }
+    \ }
+
+function! LightLineWindowNumber()
+    return 'w:' . winnr()
+endfunction
 
 " ============== General Key Mappings ==============
 cmap w!! %!sudo tee > /dev/null %
