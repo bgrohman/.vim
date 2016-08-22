@@ -4,13 +4,13 @@ call pathogen#helptags()
 
 " ============== Colorscheme ==============
 syntax on
-"colorscheme monokai
 
 set background=dark
 if !has("gui_running")
     set background=dark
 endif
-colorscheme einkBryan
+"colorscheme einkBryan
+colorscheme monokai
 
 " ============== General config ====================
 
@@ -56,7 +56,7 @@ else
 endif
 
 if has("gui_running")
-    set cursorline
+    "set cursorline
 
     if has("gui_macvim")
         set guifont=Menlo:h11
