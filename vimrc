@@ -4,13 +4,13 @@ call pathogen#helptags()
 
 " ============== Colorscheme ==============
 syntax on
-"colorscheme monokai
-
 set background=dark
-if !has("gui_running")
-    set background=dark
-endif
-colorscheme einkBryan
+colorscheme monokai
+highlight StatusLineNC gui=italic guifg=#999999 ctermfg=grey
+
+" set background=light
+" colorscheme einkBryan
+" colorscheme pencil
 
 " ============== General config ====================
 
@@ -49,7 +49,6 @@ if has("unix")
 else
     set fileformats=unix,dos
     command! DosFormat execute ":e ++ff=dos"
-    command! Paste call feedkeys('"+gP')
 
     " open vimrc
     map <leader>rc <ESC>:e ~/development/git_repos/.vim/.vimrc<CR>
@@ -60,6 +59,14 @@ if has("gui_running")
 
     if has("gui_macvim")
         set guifont=Menlo:h11
+    elseif has("unix")
+        set guifont=Monospace\ 10 
+        set guioptions-=T
+        if !exists("g:already_set_initial_dimensions")
+            set lines=60
+            set columns=120
+            let already_set_initial_dimensions=1
+        endif
     else
         set guifont=Consolas:h10
         set guioptions-=T
@@ -70,6 +77,8 @@ if has("gui_running")
         endif
     endif
 endif
+
+command! Paste call feedkeys('"+gP')
 
 " ================= Indentation ====================
 set autoindent
@@ -113,14 +122,13 @@ let g:syntastic_javascript_checkers = ['jshint']
 " ================= Status Line ====================
 set laststatus=2 "always show
 set statusline=
-set statusline+=%f\                                  "file name
+set statusline+=%f%*\               "file name
 set statusline+=%h%1*%m%r%w%0*                       "flags
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=%=                                   "right align
-set statusline+=%-7.(win:%{winnr()}%)                "window number
-set statusline+=%-14.(%l,%c%V%)\ %<%P                "offset
+set statusline+=%10.(w:%{winnr()}\ l:%l%)\ %<%P      "window number, line number, percentage
 
 " ============== General Key Mappings ==============
 cmap w!! %!sudo tee > /dev/null %
