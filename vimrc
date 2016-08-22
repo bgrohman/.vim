@@ -51,7 +51,7 @@ else
     command! DosFormat execute ":e ++ff=dos"
 
     " open vimrc
-    map <leader>rc <ESC>:e ~/development/git_repos/.vim/.vimrc<CR>
+    map <leader>rc <ESC>:e ~/development/git_repos/.vim/vimrc<CR>
 endif
 
 if has("gui_running")
@@ -105,7 +105,7 @@ nmap g# g#zz
 " ============= Text Completion ====================
 set wildmode=longest,list,full
 set wildmenu
-set wildignore=*.o,*.class,CVS,*.pyc,.svn,.git,.gitignore,bin,target
+set wildignore=*.o,*.class,CVS,*.pyc,.svn,.git,.gitignore,.idea,bin,target,build,node,node_modules,bower_components,vendor
 
 imap <C-Space> <C-x><C-o>
 set omnifunc=syntaxcomplete#Complete
