@@ -8,7 +8,8 @@ function! Notes()
 endfunction
 
 function! NotesByTag(tag)
-   execute "vimgrep /^Tags:.*" . a:tag . "/ " . g:notes_base_path . "/**/*.txt" 
+    execute "call Notes()"
+    execute "vimgrep /^Tags:.*" . a:tag . "/ " . g:notes_base_path . "/**/*.txt" 
 endfunction
 
 function! GetNoteTags()
