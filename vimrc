@@ -55,8 +55,6 @@ else
 endif
 
 if has("gui_running")
-    set cursorline
-
     if has("gui_macvim")
         set guifont=Menlo:h11
     elseif has("unix")
