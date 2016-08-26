@@ -5,6 +5,8 @@ endif
 function! Notes()
     execute "cd " . g:notes_base_path
     execute "set path=."
+    set background=light
+    colorscheme einkBryan
 endfunction
 
 function! NotesByTag(tag)
