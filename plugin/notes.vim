@@ -5,8 +5,14 @@ endif
 function! Notes()
     execute "cd " . g:notes_base_path
     execute "set path=."
+
     set background=light
     colorscheme einkBryan
+
+    highlight NoteTagsLine gui=italic cterm=italic term=italic
+    highlight NoteTagskeyword gui=bold cterm=bold term=bold 
+    set syntax=notes
+    autocmd BufNewFile,BufRead *.txt set syntax=notes
 endfunction
 
 function! NotesByTag(tag)
