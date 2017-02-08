@@ -86,7 +86,6 @@ set shiftwidth=4
 set expandtab
 
 autocmd BufNewFile,BufRead *.less set filetype=css
-autocmd BufNewFile,BufRead *.txt set filetype=txt
 
 " ==================== Search ======================
 set incsearch
