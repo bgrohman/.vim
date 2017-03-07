@@ -1,5 +1,5 @@
 if !exists("g:notes_base_path")
-    let g:notes_base_path = "~/Dropbox/Notes"
+    let g:notes_base_path = "~/notes"
 endif
 
 function! Notes()
