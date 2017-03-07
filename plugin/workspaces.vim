@@ -1,7 +1,13 @@
-function! workspaces#WfoWebapp()
-    let repo_base_path = "~/development/git_repos/saas-wfo-webapp"
+function! workspaces#WfmWebapp()
+    let repo_base_path = "~/development/git_repos/webapp-wfm"
     execute "cd " . repo_base_path
-    execute "set path=.," . repo_base_path . "/src," . repo_base_path . "/tests"
+    execute "set path=.," . repo_base_path . "/src/**," . repo_base_path . "/tests/**"
+endfunction
+
+function! workspaces#AdminWebapp()
+    let repo_base_path = "~/development/git_repos/webapp-admin"
+    execute "cd " . repo_base_path
+    execute "set path=.," . repo_base_path . "/src/**," . repo_base_path . "/tests/**"
 endfunction
 
 function! workspaces#Vim()
@@ -13,7 +19,7 @@ function! workspaces#Vim()
 
     execute "cd " . repo_base_path
     execute "set path=.," . repo_base_path
-    execute ":e " . repo_base_path . "/.vimrc"
+    execute ":e " . repo_base_path . "/vimrc"
 endfunction
 
 function! workspaces#BowerComponents()
@@ -22,7 +28,8 @@ function! workspaces#BowerComponents()
     execute "set path=."
 endfunction
 
-command! WorkspaceWfoWebapp call workspaces#WfoWebapp()
+command! WorkspaceWfmWebapp call workspaces#WfmWebapp()
+command! WorkspaceAdminWebapp call workspaces#AdminWebapp()
 command! WorkspaceVim call workspaces#Vim()
 command! WorkspaceBower call workspaces#BowerComponents()
 
