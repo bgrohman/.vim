@@ -10,7 +10,6 @@ function! SetPlainText()
     setlocal nosmartindent
     setlocal indentexpr=0
     setlocal breakindent
-    setlocal breakindentopt=shift:2
 endfunction
 
 autocmd BufNewFile,BufRead *.txt call SetPlainText()
