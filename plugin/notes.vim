@@ -1,5 +1,5 @@
 if !exists("g:notes_base_path")
-    let g:notes_base_path = "~/notes"
+    let g:notes_base_path = "~/Documents"
 endif
 
 function! Notes()
@@ -7,7 +7,7 @@ function! Notes()
     execute "set path=."
 
     set background=light
-    colorscheme einkBryan
+    colorscheme eink
 
     highlight NoteTagsLine gui=italic cterm=italic term=italic
     highlight NoteTagskeyword gui=bold cterm=bold term=bold 
