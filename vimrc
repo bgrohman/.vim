@@ -82,6 +82,7 @@ command! Paste call feedkeys('"+gP')
 set autoindent
 set smartindent
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 
@@ -130,6 +131,10 @@ set statusline+=%10.(w:%{winnr()}\ l:%l%)\ %<%P      "window number, line number
 
 " ============== General Key Mappings ==============
 cmap w!! %!sudo tee > /dev/null %
+
+" moving between visible lines
+nnoremap j gj
+nnoremap k gk
 
 " prev/next buffer
 map <right> <ESC>:bn<CR>
