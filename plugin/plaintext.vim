@@ -13,4 +13,5 @@ function! SetPlainText()
 endfunction
 
 autocmd BufNewFile,BufRead *.txt call SetPlainText()
+autocmd BufNewFile,BufRead *.md call SetPlainText()
 command! PlainText call SetPlainText()
