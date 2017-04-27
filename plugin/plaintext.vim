@@ -1,4 +1,7 @@
 function! SetPlainText()
+    set background=light
+    colorscheme einkBryan
+
     setlocal wrap
     setlocal linebreak
     setlocal nolist
@@ -10,6 +13,7 @@ function! SetPlainText()
     setlocal nosmartindent
     setlocal indentexpr=0
     setlocal breakindent
+    setlocal colorcolumn=80
 endfunction
 
 autocmd BufNewFile,BufRead *.txt call SetPlainText()

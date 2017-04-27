@@ -7,7 +7,7 @@ function! Notes()
     execute "set path=."
 
     set background=light
-    colorscheme eink
+    colorscheme einkBryan
 
     highlight NoteTagsLine gui=italic cterm=italic term=italic
     highlight NoteTagskeyword gui=bold cterm=bold term=bold 
