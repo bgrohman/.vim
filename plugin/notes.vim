@@ -6,7 +6,11 @@ function! Notes()
     execute "cd " . g:notes_base_path
     execute "set path=."
 
-    set background=light
+    if has("gui_running")
+        set background=light
+    else
+        set background=dark
+    endif
     colorscheme einkBryan
 
     highlight NoteTagsLine gui=italic cterm=italic term=italic

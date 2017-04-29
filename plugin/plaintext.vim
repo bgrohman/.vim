@@ -1,5 +1,9 @@
 function! SetPlainText()
-    set background=light
+    if has("gui_running")
+        set background=light
+    else
+        set background=dark
+    endif
     colorscheme einkBryan
 
     setlocal wrap
