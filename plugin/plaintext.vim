@@ -18,6 +18,7 @@ function! SetPlainText()
     setlocal indentexpr=0
     setlocal breakindent
     setlocal colorcolumn=80
+    setlocal nonumber
 endfunction
 
 autocmd BufNewFile,BufRead *.txt call SetPlainText()
