@@ -200,7 +200,7 @@ if &background == 'light'
 	hi NonText guifg=DarkGray cterm=NONE ctermfg=7
 	hi Search guifg=LightCyan guibg=Black ctermfg=6 ctermbg=0
 	hi IncSearch guifg=LightCyan guibg=Black ctermfg=6 ctermbg=0
-	hi ColorColumn guibg=#f7f7f7
+	hi ColorColumn guibg=#f7f7f7 guifg=gray11
 	hi StatusLineNC term=reverse ctermbg=0 ctermfg=7 guibg=Black guifg=DarkGray
         hi Pmenu guibg=LightCyan guifg=Black
         hi PmenuSel guibg=Pink guifg=Black
