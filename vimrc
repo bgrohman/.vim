@@ -8,6 +8,14 @@ set background=dark
 colorscheme monokai
 highlight StatusLineNC gui=italic guifg=#999999 ctermfg=grey
 
+" syntax off
+" if has("gui_running")
+"     set background=light
+" else
+"     set background=dark
+" endif
+" colorscheme einkBryan
+
 " ============== General config ====================
 
 " Auto-load vimrc changes
@@ -62,7 +70,8 @@ if has("gui_running")
             let already_set_initial_dimensions=1
         endif
     else
-        set guifont=Consolas:h10
+        " set guifont=Consolas:h8
+        set guifont=Liberation\ Mono:h10
         set guioptions-=T
         if !exists("g:already_set_initial_dimensions")
             set lines=50
