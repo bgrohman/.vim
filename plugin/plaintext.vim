@@ -19,8 +19,9 @@ function! SetPlainText()
     setlocal breakindent
     setlocal colorcolumn=80
     setlocal nonumber
+    call goyo#execute(0, [])
 endfunction
 
-autocmd BufNewFile,BufRead *.txt call SetPlainText()
-autocmd BufNewFile,BufRead *.md call SetPlainText()
+"autocmd BufNewFile,BufRead *.txt call SetPlainText()
+"autocmd BufNewFile,BufRead *.md call SetPlainText()
 command! PlainText call SetPlainText()
