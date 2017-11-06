@@ -4,7 +4,10 @@ function! SetPlainText()
     else
         set background=dark
     endif
+
     colorscheme einkBryan
+    setlocal syntax=on
+    setlocal filetype=markdown
 
     setlocal spell
     setlocal wrap
