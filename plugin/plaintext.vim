@@ -20,7 +20,6 @@ function! SetPlainText()
     setlocal smartindent
     setlocal indentexpr=0
     setlocal breakindent
-    setlocal colorcolumn=81
     setlocal comments=
     setlocal commentstring=>\ %s
 
