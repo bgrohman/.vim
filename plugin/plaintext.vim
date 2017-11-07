@@ -17,6 +17,7 @@ function! SetLocalStuff()
     setlocal commentstring=>\ %s
 
     " Better indention/ hierarchy when formatting with "gq"
+    " From https://www.reddit.com/r/vim/comments/4lvaok/supercharge_vim_formatting_for_plain_text/
     set formatlistpat=^\\s*                    " Optional leading whitespace
     set formatlistpat+=[                       " Start class
     set formatlistpat+=\\[({]\\?               " |  Optionally match opening punctuation
