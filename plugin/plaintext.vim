@@ -1,11 +1,4 @@
-function! SetPlainText()
-    if has("gui_running")
-        set background=light
-    else
-        set background=dark
-    endif
-
-    colorscheme einkBryan
+function! SetLocalStuff()
     setlocal syntax=on
     setlocal filetype=markdown
 
@@ -40,6 +33,18 @@ function! SetPlainText()
     " call goyo#execute(0, [])
 endfunction
 
-"autocmd BufNewFile,BufRead *.txt call SetPlainText()
-"autocmd BufNewFile,BufRead *.md call SetPlainText()
+function! SetPlainText()
+    if has("gui_running")
+        set background=light
+    else
+        set background=dark
+    endif
+
+    colorscheme einkBryan
+
+    call SetLocalStuff()
+endfunction
+
+autocmd BufNewFile,BufRead *.txt call SetLocalStuff()
+autocmd BufNewFile,BufRead *.md call SetLocalStuff()
 command! PlainText call SetPlainText()
