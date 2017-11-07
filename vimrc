@@ -71,7 +71,7 @@ if has("gui_running")
         endif
     else
         " set guifont=Consolas:h8
-        set guifont=Liberation\ Mono:h10
+        set guifont=Liberation\ Mono:h9
         set guioptions-=T
         if !exists("g:already_set_initial_dimensions")
             set lines=50
