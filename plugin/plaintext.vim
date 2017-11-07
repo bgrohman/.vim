@@ -4,22 +4,40 @@ function! SetPlainText()
     else
         set background=dark
     endif
-    colorscheme einkBryan
 
+    colorscheme einkBryan
+    setlocal syntax=on
+    setlocal filetype=markdown
+
+    setlocal spell
     setlocal wrap
     setlocal linebreak
     setlocal nolist
-    setlocal textwidth=0
+    setlocal textwidth=80
     setlocal wrapmargin=0
-    setlocal formatoptions-=t
-    setlocal formatoptions+=1
-    setlocal noautoindent
-    setlocal nosmartindent
+    setlocal formatoptions=tcoqnl1j
+    setlocal autoindent
+    setlocal smartindent
     setlocal indentexpr=0
     setlocal breakindent
-    setlocal colorcolumn=80
-    setlocal nonumber
-    call goyo#execute(0, [])
+    setlocal comments=
+    setlocal commentstring=>\ %s
+
+    " Better indention/ hierarchy when formatting with "gq"
+    set formatlistpat=^\\s*                    " Optional leading whitespace
+    set formatlistpat+=[                       " Start class
+    set formatlistpat+=\\[({]\\?               " |  Optionally match opening punctuation
+    set formatlistpat+=\\(                     " |  Start group
+    set formatlistpat+=[0-9]\\+                " |  |  A number
+    set formatlistpat+=\\\|[iIvVxXlLcCdDmM]\\+ " |  |  Roman numerals
+    set formatlistpat+=\\\|[a-zA-Z]            " |  |  A single letter
+    set formatlistpat+=\\)                     " |  End group
+    set formatlistpat+=[\\]:.)}                " |  Closing punctuation
+    set formatlistpat+=]                       " End class
+    set formatlistpat+=\\s\\+                  " One or more spaces
+    set formatlistpat+=\\\|^\\s*[-¿+o*]\\s\\+  " Or ASCII style bullet points
+
+    "call goyo#execute(0, [])
 endfunction
 
 "autocmd BufNewFile,BufRead *.txt call SetPlainText()
