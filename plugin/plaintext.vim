@@ -1,11 +1,4 @@
-function! SetPlainText()
-    if has("gui_running")
-        set background=light
-    else
-        set background=dark
-    endif
-
-    colorscheme einkBryan
+function! SetLocalStuff()
     setlocal syntax=on
     setlocal filetype=markdown
 
@@ -24,6 +17,7 @@ function! SetPlainText()
     setlocal commentstring=>\ %s
 
     " Better indention/ hierarchy when formatting with "gq"
+    " From https://www.reddit.com/r/vim/comments/4lvaok/supercharge_vim_formatting_for_plain_text/
     set formatlistpat=^\\s*                    " Optional leading whitespace
     set formatlistpat+=[                       " Start class
     set formatlistpat+=\\[({]\\?               " |  Optionally match opening punctuation
@@ -35,11 +29,23 @@ function! SetPlainText()
     set formatlistpat+=[\\]:.)}                " |  Closing punctuation
     set formatlistpat+=]                       " End class
     set formatlistpat+=\\s\\+                  " One or more spaces
-    set formatlistpat+=\\\|^\\s*[-¿+o*]\\s\\+  " Or ASCII style bullet points
+    set formatlistpat+=\\\|^\\s*[-–+o*]\\s\\+  " Or ASCII style bullet points
 
-    "call goyo#execute(0, [])
+    " call goyo#execute(0, [])
 endfunction
 
-"autocmd BufNewFile,BufRead *.txt call SetPlainText()
-"autocmd BufNewFile,BufRead *.md call SetPlainText()
+function! SetPlainText()
+    if has("gui_running")
+        set background=light
+    else
+        set background=dark
+    endif
+
+    colorscheme einkBryan
+
+    call SetLocalStuff()
+endfunction
+
+autocmd BufNewFile,BufRead *.txt call SetLocalStuff()
+autocmd BufNewFile,BufRead *.md call SetLocalStuff()
 command! PlainText call SetPlainText()
