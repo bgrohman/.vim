@@ -37,7 +37,6 @@ set fo=tcqor
 set splitbelow
 set splitright
 set scrolloff=3
-let g:netrw_home=$HOME
 
 if has("unix")
     " open vimrc
@@ -82,6 +81,14 @@ if has("gui_running")
 endif
 
 command! Paste call feedkeys('"+gP')
+
+" ================ netrw config ====================
+let g:netrw_home=$HOME          " Store history in home directory
+let g:netrw_banner=0            " Hide banner
+let g:netrw_liststyle=3         " Tree-style listing
+let g:netrw_browse_split=4      " Pressing enter opens file in last-accessed window
+let g:netrw_altv=1              " Right splitting
+let g:netrw_winsize=25          " 25% of window size for new windows
 
 " ================= Indentation ====================
 set autoindent
