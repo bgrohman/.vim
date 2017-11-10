@@ -90,6 +90,7 @@ let g:netrw_altv=1              " Right splitting
 " ============== folding config ====================
 set foldmethod=indent
 set foldlevel=999
+set foldignore=
 
 " ================= Indentation ====================
 set autoindent
