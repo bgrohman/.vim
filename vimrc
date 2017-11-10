@@ -85,8 +85,11 @@ command! Paste call feedkeys('"+gP')
 " ================ netrw config ====================
 let g:netrw_home=$HOME          " Store history in home directory
 let g:netrw_banner=0            " Hide banner
-"let g:netrw_liststyle=3         " Tree-style listing
 let g:netrw_altv=1              " Right splitting
+
+" ============== folding config ====================
+set foldmethod=indent
+set foldlevel=999
 
 " ================= Indentation ====================
 set autoindent
