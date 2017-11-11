@@ -37,7 +37,6 @@ set fo=tcqor
 set splitbelow
 set splitright
 set scrolloff=3
-let g:netrw_home=$HOME
 
 if has("unix")
     " open vimrc
@@ -70,7 +69,8 @@ if has("gui_running")
             let already_set_initial_dimensions=1
         endif
     else
-        set guifont=Consolas:h10
+        " set guifont=Consolas:h8
+        set guifont=Liberation\ Mono:h9
         set guioptions-=T
         if !exists("g:already_set_initial_dimensions")
             set lines=50
@@ -81,6 +81,16 @@ if has("gui_running")
 endif
 
 command! Paste call feedkeys('"+gP')
+
+" ================ netrw config ====================
+let g:netrw_home=$HOME          " Store history in home directory
+let g:netrw_banner=0            " Hide banner
+let g:netrw_altv=1              " Right splitting
+
+" ============== folding config ====================
+set foldmethod=indent
+set foldlevel=999
+set foldignore=
 
 " ================= Indentation ====================
 set autoindent
