@@ -5,16 +5,13 @@ call pathogen#helptags()
 " ============== Colorscheme ==============
 syntax on
 set background=dark
-colorscheme monokai
-highlight StatusLineNC gui=italic guifg=#999999 ctermfg=grey
 
-" syntax off
-" if has("gui_running")
-"     set background=light
-" else
-"     set background=dark
-" endif
-" colorscheme einkBryan
+if has("gui_running")
+    colorscheme monokai
+    highlight StatusLineNC gui=italic guifg=#999999 ctermfg=grey
+else
+    colorscheme default
+endif
 
 " ============== General config ====================
 
