@@ -16,7 +16,10 @@ function! Notes()
     highlight NoteTagsLine gui=italic cterm=italic term=italic
     highlight NoteTagskeyword gui=bold cterm=bold term=bold 
     set syntax=notes
-    autocmd BufNewFile,BufRead *.txt set syntax=notes
+    augroup notes
+        autocmd!
+        autocmd BufNewFile,BufRead *.txt set syntax=notes
+    augroup END
 endfunction
 
 function! NotesByTag(tag)

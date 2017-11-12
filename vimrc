@@ -19,7 +19,10 @@ highlight StatusLineNC gui=italic guifg=#999999 ctermfg=grey
 " ============== General config ====================
 
 " Auto-load vimrc changes
-autocmd! BufWritePost .vimrc source %
+augroup vimrc
+    autocmd!
+    autocmd BufWritePost .vimrc source %
+augroup END
 
 filetype plugin indent on
 set nocompatible
@@ -100,7 +103,10 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-autocmd BufNewFile,BufRead *.less set filetype=css
+augroup less
+    autocmd!
+    autocmd BufNewFile,BufRead *.less set filetype=css
+augroup END
 
 " ==================== Search ======================
 set incsearch

@@ -46,6 +46,10 @@ function! SetPlainText()
     call SetLocalStuff()
 endfunction
 
-autocmd BufNewFile,BufRead *.txt call SetLocalStuff()
-autocmd BufNewFile,BufRead *.md call SetLocalStuff()
+augroup plaintext
+    autocmd!
+    autocmd BufNewFile,BufRead *.txt call SetLocalStuff()
+    autocmd BufNewFile,BufRead *.md call SetLocalStuff()
+augroup END
+
 command! PlainText call SetPlainText()
