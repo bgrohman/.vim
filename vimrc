@@ -100,9 +100,15 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+" ================== File Types ====================
 augroup less
     autocmd!
     autocmd BufNewFile,BufRead *.less set filetype=css
+augroup END
+
+augroup markdown
+    autocmd!
+    autocmd BufNewFile,BufRead *.md set filetype=Markdown
 augroup END
 
 " ==================== Search ======================
