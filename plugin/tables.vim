@@ -23,9 +23,17 @@
 " | 5  | Broccoli  | Vegetable | Yes    |
 " +----+-----------+-----------+--------+
 
-let g:tables_default_separator = ","
-let g:tables_column_separator = "|"
-let g:tables_vertex = "+"
+if !exists("g:tables_default_separator")
+    let g:tables_default_separator = ","
+endif
+
+if !exists("g:tables_column_separator")
+    let g:tables_column_separator = "|"
+endif
+
+if !exists("g:tables_vertex")
+    let g:tables_vertex = "+"
+endif
 
 function! s:Trim(x)
     return substitute(a:x, '^\s*\(.\{-}\)\s*$', '\1', '') 
