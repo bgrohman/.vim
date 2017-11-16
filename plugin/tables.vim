@@ -35,6 +35,14 @@ if !exists("g:tables_vertex")
     let g:tables_vertex = "+"
 endif
 
+if !exists("g:tables_border")
+    let g:tables_border = "-"
+endif
+
+if !exists("g:tables_header_border")
+    let g:tables_header_border = "="
+endif
+
 function! s:Trim(x)
     return substitute(a:x, '^\s*\(.\{-}\)\s*$', '\1', '') 
 endfunction
@@ -64,9 +72,9 @@ function! tables#Table(start_line, end_line, ...)
     " Add the top border
     let border_line = g:tables_vertex
     for j in range(num_columns)
-        let border_line .= repeat("-", get(max_column_lengths, j) + 1) . g:tables_vertex
+        let border_line .= repeat(g:tables_border, get(max_column_lengths, j) + 1) . g:tables_vertex
     endfor
-    let header_line = substitute(border_line, "-", "=", "g")
+    let header_line = substitute(border_line, g:tables_border, g:tables_header_border, "g")
     call append(a:start_line - 1, border_line)
 
     " Format each line and add borders
