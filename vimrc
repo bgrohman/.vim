@@ -173,6 +173,10 @@ map <leader>cd <ESC>:cd %:h<CR>
 " list marks
 map <leader>m <ESC>:marks a-zA-Z<CR>
 
+" switching between tabs
+map <C-tab> <ESC>:tabn<CR>
+map <C-S-tab> <ESC>:tabp<CR>
+
 " ====================== Diff ======================
 " Diff two buffers in current window
 command! DiffBuffs execute ":windo diffthis"
