@@ -22,3 +22,9 @@
 [submodule "bundle/goyo.vim"]
 	path = bundle/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
+[submodule "bundle/vim-bg-tables"]
+	path = bundle/vim-bg-tables
+	url = git@github.com:bgrohman/vim-bg-tables.git
+[submodule "bundle/bg-tables"]
+	path = bundle/bg-tables
+	url = git@github.com:bgrohman/vim-bg-tables.git
