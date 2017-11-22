@@ -108,7 +108,7 @@ augroup END
 
 augroup markdown
     autocmd!
-    autocmd BufNewFile,BufRead *.md set filetype=Markdown
+    autocmd BufNewFile,BufRead *.md setlocal filetype=Markdown
 augroup END
 
 " ==================== Search ======================

@@ -1,4 +1,13 @@
-function! SetLocalStuff()
+function MarkdownFoldLevel() 
+    let h = matchstr(getline(v:lnum), '^#\+') 
+    if empty(h) 
+        return "=" 
+    else 
+        return ">" . len(h) 
+    endif 
+endfunction
+
+function! SetLocalPlainTextStuff()
     setlocal syntax=on
     setlocal filetype=markdown
 
@@ -16,20 +25,23 @@ function! SetLocalStuff()
     setlocal comments=
     setlocal commentstring=>\ %s
 
+    setlocal foldexpr=MarkdownFoldLevel()  
+    setlocal foldmethod=expr 
+
     " Better indention/ hierarchy when formatting with "gq"
     " From https://www.reddit.com/r/vim/comments/4lvaok/supercharge_vim_formatting_for_plain_text/
-    set formatlistpat=^\\s*                    " Optional leading whitespace
-    set formatlistpat+=[                       " Start class
-    set formatlistpat+=\\[({]\\?               " |  Optionally match opening punctuation
-    set formatlistpat+=\\(                     " |  Start group
-    set formatlistpat+=[0-9]\\+                " |  |  A number
-    set formatlistpat+=\\\|[iIvVxXlLcCdDmM]\\+ " |  |  Roman numerals
-    set formatlistpat+=\\\|[a-zA-Z]            " |  |  A single letter
-    set formatlistpat+=\\)                     " |  End group
-    set formatlistpat+=[\\]:.)}                " |  Closing punctuation
-    set formatlistpat+=]                       " End class
-    set formatlistpat+=\\s\\+                  " One or more spaces
-    set formatlistpat+=\\\|^\\s*[-–+o*]\\s\\+  " Or ASCII style bullet points
+    setlocal formatlistpat=^\\s*                    " Optional leading whitespace
+    setlocal formatlistpat+=[                       " Start class
+    setlocal formatlistpat+=\\[({]\\?               " |  Optionally match opening punctuation
+    setlocal formatlistpat+=\\(                     " |  Start group
+    setlocal formatlistpat+=[0-9]\\+                " |  |  A number
+    setlocal formatlistpat+=\\\|[iIvVxXlLcCdDmM]\\+ " |  |  Roman numerals
+    setlocal formatlistpat+=\\\|[a-zA-Z]            " |  |  A single letter
+    setlocal formatlistpat+=\\)                     " |  End group
+    setlocal formatlistpat+=[\\]:.)}                " |  Closing punctuation
+    setlocal formatlistpat+=]                       " End class
+    setlocal formatlistpat+=\\s\\+                  " One or more spaces
+    setlocal formatlistpat+=\\\|^\\s*[-–+o*]\\s\\+  " Or ASCII style bullet points
 
     " call goyo#execute(0, [])
 endfunction
@@ -43,13 +55,13 @@ function! SetPlainText()
 
     colorscheme einkBryan
 
-    call SetLocalStuff()
+    call SetLocalPlainTextStuff()
 endfunction
 
 augroup plaintext
     autocmd!
-    autocmd BufNewFile,BufRead *.txt call SetLocalStuff()
-    autocmd BufNewFile,BufRead *.md call SetLocalStuff()
+    autocmd BufNewFile,BufRead *.txt call SetLocalPlainTextStuff()
+    autocmd BufNewFile,BufRead *.md call SetLocalPlainTextStuff()
 augroup END
 
 command! PlainText call SetPlainText()
