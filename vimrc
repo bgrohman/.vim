@@ -100,9 +100,15 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+" ================== File Types ====================
 augroup less
     autocmd!
     autocmd BufNewFile,BufRead *.less set filetype=css
+augroup END
+
+augroup markdown
+    autocmd!
+    autocmd BufNewFile,BufRead *.md setlocal filetype=Markdown
 augroup END
 
 " ==================== Search ======================
@@ -172,6 +178,10 @@ map <leader>cd <ESC>:cd %:h<CR>
 
 " list marks
 map <leader>m <ESC>:marks a-zA-Z<CR>
+
+" switching between tabs
+map <C-tab> <ESC>:tabn<CR>
+map <C-S-tab> <ESC>:tabp<CR>
 
 " ====================== Diff ======================
 " Diff two buffers in current window
