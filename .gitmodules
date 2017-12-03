@@ -16,15 +16,9 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "bundle/nginx-vim-syntax"]
-	path = bundle/nginx-vim-syntax
-	url = https://github.com/evanmiller/nginx-vim-syntax.git
 [submodule "bundle/goyo.vim"]
 	path = bundle/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
 [submodule "bundle/vim-bg-tables"]
 	path = bundle/vim-bg-tables
-	url = git@github.com:bgrohman/vim-bg-tables.git
-[submodule "bundle/bg-tables"]
-	path = bundle/bg-tables
-	url = git@github.com:bgrohman/vim-bg-tables.git
+	url = https://github.com/bgrohman/vim-bg-tables.git
