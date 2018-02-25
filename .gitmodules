@@ -22,3 +22,6 @@
 [submodule "bundle/vim-bg-tables"]
 	path = bundle/vim-bg-tables
 	url = https://github.com/bgrohman/vim-bg-tables.git
+[submodule "bundle/bg-tables"]
+	path = bundle/bg-tables
+	url = git@bgit:/git/vim-bg-tables.git
