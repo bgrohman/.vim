@@ -7,8 +7,7 @@ syntax on
 set background=dark
 
 if has("gui_running")
-    colorscheme monokai
-    highlight StatusLineNC gui=italic guifg=#999999 ctermfg=grey
+    colorscheme monokai_pro
 else
     colorscheme default
 endif
