@@ -53,7 +53,7 @@ function! SetPlainText()
         set background=dark
     endif
 
-    colorscheme einkBryan
+    colorscheme pencil
 
     call SetLocalPlainTextStuff()
 endfunction
