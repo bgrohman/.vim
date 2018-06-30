@@ -25,3 +25,6 @@
 [submodule "bundle/bg-tables"]
 	path = bundle/bg-tables
 	url = git@bgit:/git/vim-bg-tables.git
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
