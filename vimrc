@@ -7,7 +7,7 @@ syntax on
 set background=dark
 
 if has("gui_running")
-    colorscheme monokai_pro
+    colorscheme monokai_bryan
     "highlight StatusLineNC gui=italic guifg=#999999 ctermfg=grey
 else
     colorscheme default
@@ -69,8 +69,8 @@ if has("gui_running")
             let already_set_initial_dimensions=1
         endif
     else
-        " set guifont=Consolas:h8
-        set guifont=Liberation\ Mono:h9
+        set guifont=Consolas:h10
+        " set guifont=Liberation\ Mono:h9
         set guioptions-=T
         if !exists("g:already_set_initial_dimensions")
             set lines=50
