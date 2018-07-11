@@ -7,7 +7,7 @@ syntax on
 set background=dark
 
 if has("gui_running")
-    colorscheme monokai_pro
+    colorscheme monokai_bryan
 else
     colorscheme default
 endif
