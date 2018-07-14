@@ -53,7 +53,7 @@ else
     command! DosFormat execute ":e ++ff=dos"
 
     " open vimrc
-    map <leader>rc <ESC>:e ~/development/git_repos/.vim/vimrc<CR>
+    map <leader>rc <ESC>:e $MYVIMRC<CR>
 endif
 
 if has("gui_running")
@@ -68,8 +68,7 @@ if has("gui_running")
             let already_set_initial_dimensions=1
         endif
     else
-        " set guifont=Consolas:h8
-        set guifont=Liberation\ Mono:h9
+        set guifont=Consolas:h10
         set guioptions-=T
         if !exists("g:already_set_initial_dimensions")
             set lines=50
