@@ -8,7 +8,6 @@ set background=dark
 
 if has("gui_running")
     colorscheme monokai_bryan
-    "highlight StatusLineNC gui=italic guifg=#999999 ctermfg=grey
 else
     colorscheme default
 endif
@@ -54,7 +53,7 @@ else
     command! DosFormat execute ":e ++ff=dos"
 
     " open vimrc
-    map <leader>rc <ESC>:e ~/development/git_repos/.vim/vimrc<CR>
+    map <leader>rc <ESC>:e $MYVIMRC<CR>
 endif
 
 if has("gui_running")
@@ -64,7 +63,7 @@ if has("gui_running")
         set guifont=Monospace\ 10 
         set guioptions-=T
         if !exists("g:already_set_initial_dimensions")
-            set lines=60
+            set lines=50
             set columns=120
             let already_set_initial_dimensions=1
         endif

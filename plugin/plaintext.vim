@@ -53,7 +53,7 @@ function! SetPlainText()
         set background=dark
     endif
 
-    colorscheme plain
+    colorscheme pencil
 
     call SetLocalPlainTextStuff()
 endfunction
