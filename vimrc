@@ -85,6 +85,10 @@ command! Paste call feedkeys('"+gP')
 let g:netrw_home=$HOME          " Store history in home directory
 let g:netrw_banner=0            " Hide banner
 let g:netrw_altv=1              " Right splitting
+let g:netrw_preview=1           " Preview window in vertical split
+let g:netrw_winsize=30          " 30% for file browser
+let g:netrw_liststyle=3         " Tree-style file browser
+let g:netrw_browse_split=4      " <CR> acts like 'P' and opens in previous window
 
 " ============== folding config ====================
 set foldmethod=indent
