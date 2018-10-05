@@ -20,6 +20,8 @@ augroup vimrc
     autocmd BufWritePost .vimrc source %
 augroup END
 
+set encoding=utf-8
+
 filetype plugin indent on
 set nocompatible
 set showmatch
