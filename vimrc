@@ -152,6 +152,15 @@ set statusline+=%*
 set statusline+=%=                                   "right align
 set statusline+=%10.(w:%{winnr()}\ l:%l%)\ %<%P      "window number, line number, percentage
 
+" ============== Tabs ==============
+" Tab labels
+set guitablabel=%N\ %t\ %m
+set guitabtooltip=%F
+
+" Switching between tabs
+map <C-tab> <ESC>:tabn<CR>
+map <C-S-tab> <ESC>:tabp<CR>
+
 " ============== General Key Mappings ==============
 cmap w!! %!sudo tee > /dev/null %
 
@@ -178,10 +187,6 @@ map <leader>cd <ESC>:cd %:h<CR>
 
 " list marks
 map <leader>m <ESC>:marks a-zA-Z<CR>
-
-" switching between tabs
-map <C-tab> <ESC>:tabn<CR>
-map <C-S-tab> <ESC>:tabp<CR>
 
 " ====================== Diff ======================
 " Diff two buffers in current window
