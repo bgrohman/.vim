@@ -39,10 +39,11 @@ set splitbelow
 set splitright
 set scrolloff=3
 
-if has("unix")
-    " open vimrc
-    map <leader>rc <ESC>:e $MYVIMRC<CR>
+" open vimrc
+map <leader>rc <ESC>:e $MYVIMRC<CR>
 
+
+if has("unix")
     if has("mac")
         " Open current file in browsers
         command! Chrome silent !/usr/bin/open -a "/Applications/Google Chrome.app" '%:p'
@@ -53,9 +54,6 @@ if has("unix")
 else
     set fileformats=unix,dos
     command! DosFormat execute ":e ++ff=dos"
-
-    " open vimrc
-    map <leader>rc <ESC>:e $MYVIMRC<CR>
 endif
 
 if has("gui_running")
