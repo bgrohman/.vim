@@ -10,6 +10,7 @@ endfunction
 function! SetLocalPlainTextStuff()
     setlocal syntax=on
     setlocal filetype=markdown
+    setlocal encoding=utf-8
 
     setlocal spell
     setlocal wrap
