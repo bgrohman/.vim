@@ -6,7 +6,7 @@ function! GitAutoCommit()
         let commandSeparator = ";"
     endif
     silent !clear
-    execute "!git add . " . commandSeparator . " git commit -m \"git auto commit " . date . "\" " . commandSeparator . " git push"
+    execute "!git add . " . commandSeparator . " git commit -m \"git auto commit " . date . "\" "
 endfunction
 
 command! AutoCommit call GitAutoCommit()
