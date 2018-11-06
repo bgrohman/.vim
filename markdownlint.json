@@ -1,0 +1,10 @@
+{
+    "default": true,
+    "line_length": 120,
+    "MD004": {
+        "style": "sublist"
+    },
+    "MD007": {
+        "indent": 4
+    }
+}
