@@ -2,18 +2,18 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+" ============== Path config ====================
+set path=.,,**
+" . = relative to directory of current file
+" empty = current directory
+" ** = downward from the current directory
+
 " ============== Colorscheme ==============
 syntax on
 set background=dark
-
-if has("gui_running")
-    colorscheme monokai_bryan
-else
-    colorscheme default
-endif
+colorscheme monokai_bryan
 
 " ============== General config ====================
-
 " Auto-load vimrc changes
 augroup vimrc
     autocmd!
