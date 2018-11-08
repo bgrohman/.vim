@@ -2,15 +2,16 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-" ============== Colorscheme ==============
+" ==================== Path config =================
+set path=,,**,.
+" empty = current directory
+" ** = downward from the current directory
+" . = relative to directory of current file
+
+" =================== Colorscheme ==================
 syntax on
 set background=dark
-
-if has("gui_running")
-    colorscheme monokai_bryan
-else
-    colorscheme default
-endif
+colorscheme monokai_bryan
 
 " ============== General config ====================
 
@@ -145,13 +146,13 @@ let g:syntastic_markdown_mdl_args = '--config ~/.vim/markdownlint.json'
 " ================= Status Line ====================
 set laststatus=2 "always show
 set statusline=
-set statusline+=%f%*\               "file name
-set statusline+=%h%1*%m%r%w%0*                       "flags
+set statusline+=%f%*\                                "file name
+set statusline+=%h%m%r%w                             "flags
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=%=                                   "right align
-set statusline+=%10.(w:%{winnr()}\ l:%l%)\ %<%P      "window number, line number, percentage
+set statusline+=%20.(%y\ w:%{winnr()}\ l:%l%)\ %<%P  "file type, window number, line number, percentage
 
 " ============== Tabs ==============
 " Tab labels
