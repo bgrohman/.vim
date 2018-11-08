@@ -1,21 +1,23 @@
-" ==================== Pathogen ====================
+" Pathogen
+" ========
 call pathogen#infect()
 call pathogen#helptags()
 
-" ==================== Path config =================
-set path=,,**,.
+" Path
+" ====
 " empty = current directory
 " ** = downward from the current directory
 " . = relative to directory of current file
+set path=,,**,.
 
-" =================== Colorscheme ==================
+" Colorscheme
+" ===========
 syntax on
 set background=dark
 colorscheme monokai_bryan
 
-" ============== General config ====================
-
-" Auto-load vimrc changes
+" General Config
+" ==============
 augroup vimrc
     autocmd!
     autocmd BufWritePost .vimrc source %
@@ -40,19 +42,11 @@ set splitbelow
 set splitright
 set scrolloff=3
 
-" open vimrc
+command! Paste call feedkeys('"+gP')
+
 map <leader>rc <ESC>:e $MYVIMRC<CR>
 
-
-if has("unix")
-    if has("mac")
-        " Open current file in browsers
-        command! Chrome silent !/usr/bin/open -a "/Applications/Google Chrome.app" '%:p'
-
-        " Open directory of current file in Finder
-        command! Finder silent !/usr/bin/open '%:p:h'
-    endif
-else
+if !has("unix")
     set fileformats=unix,dos
     command! DosFormat execute ":e ++ff=dos"
 endif
@@ -79,19 +73,20 @@ if has("gui_running")
     endif
 endif
 
-command! Paste call feedkeys('"+gP')
-
-" ================ netrw config ====================
+" Netrw
+" =====
 let g:netrw_home=$HOME          " Store history in home directory
 let g:netrw_banner=0            " Hide banner
 let g:netrw_altv=1              " Right splitting
 
-" ============== folding config ====================
+" Folding
+" =======
 set foldmethod=indent
 set foldlevel=999
 set foldignore=
 
-" ================= Indentation ====================
+" Indentation
+" ===========
 set autoindent
 set smartindent
 set tabstop=4
@@ -99,22 +94,21 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-" ================== File Types ====================
-augroup less
+" File Types
+" ==========
+augroup fileTypeHandling
     autocmd!
     autocmd BufNewFile,BufRead *.less set filetype=css
-augroup END
-
-augroup markdown
-    autocmd!
     autocmd BufNewFile,BufRead *.md setlocal filetype=Markdown
 augroup END
 
-" ==================== Search ======================
+" Search
+" ======
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase 
+
 " Make search results appear in the middle of the screen.
 nmap n nzz
 nmap N Nzz
@@ -123,7 +117,8 @@ nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
 
-" ============= Text Completion ====================
+" Text Completion
+" ===============
 set wildmode=longest,list,full
 set wildmenu
 set wildignore=*.o,*.class,CVS,*.pyc,.svn,.git,.gitignore,.idea,bin,target,build,node,node_modules,bower_components,vendor
@@ -131,7 +126,8 @@ set wildignore=*.o,*.class,CVS,*.pyc,.svn,.git,.gitignore,.idea,bin,target,build
 imap <C-Space> <C-x><C-o>
 set omnifunc=syntaxcomplete#Complete
 
-" ================= Syntastic ======================
+" Syntastic
+" =========
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -143,7 +139,8 @@ let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_markdown_mdl_exec = 'markdownlint'
 let g:syntastic_markdown_mdl_args = '--config ~/.vim/markdownlint.json'
 
-" ================= Status Line ====================
+" Status Line
+" ===========
 set laststatus=2 "always show
 set statusline=
 set statusline+=%f%*\                                "file name
@@ -154,16 +151,16 @@ set statusline+=%*
 set statusline+=%=                                   "right align
 set statusline+=%20.(%y\ w:%{winnr()}\ l:%l%)\ %<%P  "file type, window number, line number, percentage
 
-" ============== Tabs ==============
-" Tab labels
+" Tabs
+" ====
 set guitablabel=%N\ %t\ %m
 set guitabtooltip=%F
 
-" Switching between tabs
 map <C-tab> <ESC>:tabn<CR>
 map <C-S-tab> <ESC>:tabp<CR>
 
-" ============== General Key Mappings ==============
+" General Key Mappings
+" ====================
 cmap w!! %!sudo tee > /dev/null %
 
 " moving between visible lines
@@ -180,8 +177,7 @@ map <S-down> <ESC>:resize -1<CR>
 map <S-left> <C-W><1
 map <S-right> <C-W>>1
 
-"nmap <C-V> "+gP
-"imap <C-V> <ESC><C-V>i
+" copying
 vmap <C-C> "+y
 
 " cd to current file's dir
@@ -190,7 +186,9 @@ map <leader>cd <ESC>:cd %:h<CR>
 " list marks
 map <leader>m <ESC>:marks a-zA-Z<CR>
 
-" ====================== Diff ======================
+" Diff
+" ====
+
 " Diff two buffers in current window
 command! DiffBuffs execute ":windo diffthis"
 
