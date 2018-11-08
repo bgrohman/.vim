@@ -153,13 +153,13 @@ let g:syntastic_markdown_mdl_args = '--config C:\Users\bgrohman\vimfiles\markdow
 " ================= Status Line ====================
 set laststatus=2 "always show
 set statusline=
-set statusline+=%f%*\               "file name
+set statusline+=%f%*\                                "file name
 set statusline+=%h%1*%m%r%w%0*                       "flags
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=%=                                   "right align
-set statusline+=%10.(w:%{winnr()}\ l:%l%)\ %<%P      "window number, line number, percentage
+set statusline+=%20.(%y\ w:%{winnr()}\ l:%l%)\ %<%P  "file type, window number, line number, percentage
 
 " ============== Tabs ==============
 " Tab labels
