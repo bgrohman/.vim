@@ -73,6 +73,33 @@ if has("gui_running")
     endif
 endif
 
+" General Key Mappings
+" ====================
+cmap w!! %!sudo tee > /dev/null %
+
+" moving between visible lines
+nnoremap j gj
+nnoremap k gk
+
+" prev/next buffer
+map <right> <ESC>:bn<CR>
+map <left> <ESC>:bp<CR>
+
+" window resizing
+map <S-up> <ESC>:resize +1<CR>
+map <S-down> <ESC>:resize -1<CR>
+map <S-left> <C-W><1
+map <S-right> <C-W>>1
+
+" copying
+vmap <C-C> "+y
+
+" cd to current file's dir
+map <leader>cd <ESC>:cd %:h<CR>
+
+" list marks
+map <leader>m <ESC>:marks a-zA-Z<CR>
+
 " Netrw
 " =====
 let g:netrw_home=$HOME          " Store history in home directory
@@ -126,19 +153,6 @@ set wildignore=*.o,*.class,CVS,*.pyc,.svn,.git,.gitignore,.idea,bin,target,build
 imap <C-Space> <C-x><C-o>
 set omnifunc=syntaxcomplete#Complete
 
-" Syntastic
-" =========
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 1
-
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_sh_checkers = ['shellcheck']
-let g:syntastic_markdown_mdl_exec = 'markdownlint'
-let g:syntastic_markdown_mdl_args = '--config ~/.vim/markdownlint.json'
-
 " Status Line
 " ===========
 set laststatus=2 "always show
@@ -159,43 +173,15 @@ set guitabtooltip=%F
 map <C-tab> <ESC>:tabn<CR>
 map <C-S-tab> <ESC>:tabp<CR>
 
-" General Key Mappings
-" ====================
-cmap w!! %!sudo tee > /dev/null %
+" Syntastic
+" =========
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
 
-" moving between visible lines
-nnoremap j gj
-nnoremap k gk
-
-" prev/next buffer
-map <right> <ESC>:bn<CR>
-map <left> <ESC>:bp<CR>
-
-" window resizing
-map <S-up> <ESC>:resize +1<CR>
-map <S-down> <ESC>:resize -1<CR>
-map <S-left> <C-W><1
-map <S-right> <C-W>>1
-
-" copying
-vmap <C-C> "+y
-
-" cd to current file's dir
-map <leader>cd <ESC>:cd %:h<CR>
-
-" list marks
-map <leader>m <ESC>:marks a-zA-Z<CR>
-
-" Diff
-" ====
-
-" Diff two buffers in current window
-command! DiffBuffs execute ":windo diffthis"
-
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-          \ | wincmd p | diffthis
-endif
-map <leader>diff <ESC>:DiffOrig<CR>
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_sh_checkers = ['shellcheck']
+let g:syntastic_markdown_mdl_exec = 'markdownlint'
+let g:syntastic_markdown_mdl_args = '--config ~/.vim/markdownlint.json'
