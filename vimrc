@@ -3,7 +3,7 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " ============== Path config ====================
-set path=.,,**
+set path=,,**,.
 " . = relative to directory of current file
 " empty = current directory
 " ** = downward from the current directory
