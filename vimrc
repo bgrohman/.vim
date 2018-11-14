@@ -159,7 +159,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=%=                                   "right align
-set statusline+=%20.(%y\ w:%{winnr()}\ l:%l%)\ %<%P  "file type, window number, line number, percentage
+set statusline+=%20.(%y\ w:%{winnr()}%)\ %<%P  "file type, window number, line number, percentage
 
 " ============== Tabs ==============
 " Tab labels
