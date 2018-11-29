@@ -11,8 +11,7 @@ set path=,,**,.
 " ============== Colorscheme ==============
 syntax on
 set background=dark
-let ayucolor="mirage"
-colorscheme ayu
+colorscheme palenight
 
 " ============== General config ====================
 " Auto-load vimrc changes
