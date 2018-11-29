@@ -11,7 +11,8 @@ set path=,,**,.
 " ============== Colorscheme ==============
 syntax on
 set background=dark
-colorscheme monokai_bryan
+let ayucolor="mirage"
+colorscheme ayu
 
 " ============== General config ====================
 " Auto-load vimrc changes

@@ -25,3 +25,15 @@
 [submodule "bundle/vim-bg-tables"]
 	path = bundle/vim-bg-tables
 	url = https://github.com/bgrohman/vim-bg-tables
+[submodule "bundle/ayu-vim"]
+	path = bundle/ayu-vim
+	url = https://github.com/ayu-theme/ayu-vim.git
+[submodule "bundle/nord-vim"]
+	path = bundle/nord-vim
+	url = https://github.com/arcticicestudio/nord-vim.git
+[submodule "bundle/palenight"]
+	path = bundle/palenight
+	url = https://github.com/drewtempelmeyer/palenight.vim.git
+[submodule "bundle/vim-one"]
+	path = bundle/vim-one
+	url = https://github.com/rakr/vim-one.git
