@@ -14,7 +14,7 @@ set path=,,**,.
 " ===========
 syntax on
 set background=dark
-colorscheme monokai_bryan
+colorscheme palenight
 
 " General Config
 " ==============
