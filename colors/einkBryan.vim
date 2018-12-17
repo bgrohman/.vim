@@ -225,3 +225,19 @@ else
         hi PmenuSel guibg=Pink guifg=Black
         hi WildMenu gui=NONE guifg=Black guibg=LightCyan cterm=NONE ctermfg=0 ctermbg=6
 endif
+
+hi markdownHeadingDelimiter gui=bold
+hi markdownHeadingRule gui=bold
+hi markdownH1 gui=bold
+hi markdownH2 gui=bold
+hi markdownH3 gui=bold
+hi markdownH4 gui=bold
+hi markdownH5 gui=bold
+hi markdownH6 gui=bold
+hi markdownBold gui=bold
+hi markdownBoldItalic gui=bold,italic
+hi markdownItalic gui=italic
+hi markdownUrl gui=italic
+hi markdownUrlDelimiter gui=italic
+hi markdownUrlTitle gui=italic
+hi markdownUrlTitleDelimiter gui=italic
