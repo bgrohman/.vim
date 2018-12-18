@@ -224,4 +224,32 @@ else
         hi Pmenu guibg=LightCyan guifg=Black
         hi PmenuSel guibg=Pink guifg=Black
         hi WildMenu gui=NONE guifg=Black guibg=LightCyan cterm=NONE ctermfg=0 ctermbg=6
+        hi Folded gui=NONE guifg=Black
+        hi FoldColumn gui=NONE guifg=Black
+        hi markdownHeadingDelimiter guifg=White
+        hi markdownHeadingRule guifg=White
+        hi markdownH1 guifg=White
+        hi markdownH2 guifg=White
+        hi markdownH3 guifg=White
+        hi markdownH4 guifg=White
+        hi markdownH5 guifg=White
+        hi markdownH6 guifg=White
+        hi markdownBold guifg=White
+        hi markdownBoldItalic guifg=White
 endif
+
+hi markdownHeadingDelimiter gui=bold
+hi markdownHeadingRule gui=bold
+hi markdownH1 gui=bold
+hi markdownH2 gui=bold
+hi markdownH3 gui=bold
+hi markdownH4 gui=bold
+hi markdownH5 gui=bold
+hi markdownH6 gui=bold
+hi markdownBold gui=bold
+hi markdownBoldItalic gui=bold,italic
+hi markdownItalic gui=italic
+hi markdownUrl gui=italic
+hi markdownUrlDelimiter gui=italic
+hi markdownUrlTitle gui=italic
+hi markdownUrlTitleDelimiter gui=italic
