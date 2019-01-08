@@ -1,12 +1,12 @@
 #! /bin/bash
 set -x
-cwd=`pwd`
 git submodule init
 git submodule update
 mkdir ~/.vim-backup
 mkdir ~/.vim-workspaces
 
 # Only do this if you're not cloning into ~/.vim directly.
+# cwd=$(pwd)
 # ln -s "$cwd" ~/.vim
 
 # WINDOWS
