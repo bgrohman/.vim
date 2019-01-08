@@ -59,7 +59,7 @@ if has("gui_running")
         set guioptions-=T
         if !exists("g:already_set_initial_dimensions")
             set lines=50
-            set columns=120
+            set columns=100
             let already_set_initial_dimensions=1
         endif
     else
