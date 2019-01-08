@@ -48,7 +48,8 @@ function! SetLocalPlainTextStuff()
 endfunction
 
 function! SetPlainText()
-    colorscheme pencil
+    colorscheme solarized
+    set background=light
     call SetLocalPlainTextStuff()
 endfunction
 
