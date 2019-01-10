@@ -10,11 +10,19 @@ function! pandoc#Convert(fileType)
     if strlen(a:fileType)
         let output_file_type = a:fileType
     endif
-    let output_file_path = file_path_no_extension . "." . output_file_type
+
+    let output_file_ext = output_file_type
+    if output_file_type == "slidy"
+        let output_file_ext = "html"
+    endif
+    let output_file_path = file_path_no_extension . "." . output_file_ext
 
     let command = "!" . g:pandoc_command . " " . file_path
     if output_file_type != "pdf"
         let command .= " -t " . output_file_type
+    endif
+    if output_file_type == "slidy"
+        let command .= " --self-contained"
     endif
     let command .= " -o " . output_file_path
 
