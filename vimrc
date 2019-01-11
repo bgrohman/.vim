@@ -150,6 +150,12 @@ let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_markdown_mdl_exec = 'markdownlint'
 let g:syntastic_markdown_mdl_args = '--config C:\Users\bgrohman\vimfiles\markdownlint.json'
 
+function! SyntasticCheckHook(errors)
+    if !empty(a:errors)
+        let g:syntastic_loc_list_height = min([len(a:errors), 5])
+    endif
+endfunction
+
 " ================= Status Line ====================
 set laststatus=2 "always show
 set statusline=
