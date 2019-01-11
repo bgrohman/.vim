@@ -9,5 +9,8 @@
     },
     "MD012": {
         "maximum": 3
+    },
+    "MD026": {
+        "punctuation": ",;:"
     }
 }
