@@ -152,7 +152,7 @@ let g:syntastic_markdown_mdl_args = '--config C:\Users\bgrohman\vimfiles\markdow
 
 function! SyntasticCheckHook(errors)
     if !empty(a:errors)
-        let g:syntastic_loc_list_height = min([len(a:errors), 5])
+        let g:syntastic_loc_list_height = max([min([len(a:errors), 5]), 2])
     endif
 endfunction
 
