@@ -28,6 +28,10 @@ function! pandoc#Convert(fileType)
 
     silent !clear
     execute command
+
+    if has("unix")
+        execute "!xdg-open " . output_file_path . " &"
+    endif
 endfunction
 
 command! -nargs=? Pandoc call pandoc#Convert(<q-args>)
