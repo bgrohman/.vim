@@ -77,12 +77,6 @@ nnoremap k gk
 map <right> <ESC>:bn<CR>
 map <left> <ESC>:bp<CR>
 
-" window resizing
-map <S-up> <ESC>:resize +1<CR>
-map <S-down> <ESC>:resize -1<CR>
-map <S-left> <C-W><1
-map <S-right> <C-W>>1
-
 " copying
 vmap <C-C> "+y
 
@@ -91,6 +85,21 @@ map <leader>cd <ESC>:cd %:h<CR>
 
 " list marks
 map <leader>m <ESC>:marks a-zA-Z<CR>
+
+" Windows
+" =======
+
+" window resizing
+map <S-up> <ESC>:resize +1<CR>
+map <S-down> <ESC>:resize -1<CR>
+map <S-left> <C-W><1
+map <S-right> <C-W>>1
+
+" window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Netrw
 " =====
