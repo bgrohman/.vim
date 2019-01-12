@@ -20,7 +20,7 @@ colorscheme palenight
 " ==============
 augroup vimrc
     autocmd!
-    autocmd BufWritePost .vimrc source %
+    autocmd BufWritePost vimrc source %
 augroup END
 
 set encoding=utf-8
@@ -105,6 +105,9 @@ map <leader>m <ESC>:marks a-zA-Z<CR>
 let g:netrw_home=$HOME          " Store history in home directory
 let g:netrw_banner=0            " Hide banner
 let g:netrw_altv=1              " Right splitting
+
+" Open vertical explore windows on the right
+command! Vex execute ":Sexplore!"
 
 " Folding
 " =======
