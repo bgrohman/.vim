@@ -51,25 +51,17 @@ if !has("unix")
     command! DosFormat execute ":e ++ff=dos"
 endif
 
+" GVim UI
+if !exists("g:already_set_initial_dimensions")
+    let g:already_set_initial_dimensions = 0
+endif
 if has("gui_running")
-    if has("gui_macvim")
-        set guifont=Menlo:h11
-    elseif has("unix")
-        set guifont=Monospace\ 10 
-        set guioptions-=T
-        if !exists("g:already_set_initial_dimensions")
-            set lines=45
-            set columns=100
-            let already_set_initial_dimensions=1
-        endif
-    else
-        set guifont=Fira_Mono:h10
-        set guioptions-=T
-        if !exists("g:already_set_initial_dimensions")
-            set lines=50
-            set columns=120
-            let already_set_initial_dimensions=1
-        endif
+    set guifont=Monospace\ 10 
+    set guioptions-=T
+    if g:already_set_initial_dimensions != 1
+        set lines=45
+        set columns=100
+        let g:already_set_initial_dimensions = 1
     endif
 endif
 
@@ -188,3 +180,9 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_markdown_mdl_exec = 'markdownlint'
 let g:syntastic_markdown_mdl_args = '--config ~/.vim/markdownlint.json'
+
+function! SyntasticCheckHook(errors)
+    if !empty(a:errors)
+        let g:syntastic_loc_list_height = max([min([len(a:errors), 5]), 2])
+    endif
+endfunction
