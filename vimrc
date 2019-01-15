@@ -4,9 +4,9 @@ call pathogen#helptags()
 
 " ============== Path config ====================
 set path=,,**,.
-" . = relative to directory of current file
 " empty = current directory
 " ** = downward from the current directory
+" . = relative to directory of current file
 
 " ============== Colorscheme ==============
 syntax on
@@ -86,7 +86,7 @@ command! Paste call feedkeys('"+gP')
 let g:netrw_home=$HOME          " Store history in home directory
 let g:netrw_banner=0            " Hide banner
 let g:netrw_altv=1              " Right splitting
-let g:netrw_keepdir=0           " Keep the current directory same as browsing directory
+let g:netrw_keepdir=1           " Don't change the current directory to match browsing directory
 
 " ============== folding config ====================
 set foldmethod=indent
