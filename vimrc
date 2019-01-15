@@ -88,6 +88,9 @@ let g:netrw_banner=0            " Hide banner
 let g:netrw_altv=1              " Right splitting
 let g:netrw_keepdir=1           " Don't change the current directory to match browsing directory
 
+" Open vertical explore windows on the right
+command! Vex execute ":Sexplore!"
+
 " ============== folding config ====================
 set foldmethod=indent
 set foldlevel=999
