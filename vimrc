@@ -195,3 +195,11 @@ function! SyntasticCheckHook(errors)
         let g:syntastic_loc_list_height = max([min([len(a:errors), 5]), 2])
     endif
 endfunction
+
+" Custom grep
+" ===========
+set grepprg=rg\ -i\ --vimgrep
+
+" Open file in external program
+" =============================
+command! Open execute ":silent !xdg-open \"%:p\" &"
