@@ -217,3 +217,7 @@ if !exists(":DiffOrig")
           \ | wincmd p | diffthis
 endif
 map <leader>diff <ESC>:DiffOrig<CR>
+
+" Custom grep
+" ===========
+set grepprg=rg\ -i\ --vimgrep
