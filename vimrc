@@ -56,7 +56,7 @@ if !exists("g:already_set_initial_dimensions")
     let g:already_set_initial_dimensions = 0
 endif
 if has("gui_running")
-    set guifont=Monospace\ 10 
+    set guifont=Fira\ Mono\ 10 
     set guioptions-=T
     if g:already_set_initial_dimensions != 1
         set lines=45
