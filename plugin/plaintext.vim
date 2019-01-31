@@ -1,15 +1,19 @@
 function MarkdownFoldLevel() 
-    let h = matchstr(getline(v:lnum), '^#\+') 
-    if empty(h) 
+    let l:h = matchstr(getline(v:lnum), '^#\+') 
+    if empty(l:h) 
         return "=" 
     else 
-        return ">" . len(h) 
+        return ">" . len(l:h) 
     endif 
 endfunction
 
 function! SetLocalPlainTextStuff()
     setlocal syntax=on
-    setlocal filetype=markdown
+
+    let l:extension=expand('%:e')
+    if l:extension == 'md'
+        setlocal filetype=markdown
+    endif
 
     setlocal spell
     setlocal wrap
