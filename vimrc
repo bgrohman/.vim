@@ -14,7 +14,7 @@ set path=,,**,.
 " ===========
 syntax on
 set background=dark
-colorscheme palenight
+colorscheme nord
 
 " General Config
 " ==============
@@ -130,7 +130,7 @@ set expandtab
 augroup fileTypeHandling
     autocmd!
     autocmd BufNewFile,BufRead *.less set filetype=css
-    autocmd BufNewFile,BufRead *.md setlocal filetype=Markdown
+    autocmd BufNewFile,BufRead *.md set filetype=markdown
 augroup END
 
 " Search
