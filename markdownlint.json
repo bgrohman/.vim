@@ -1,6 +1,7 @@
 {
     "default": true,
     "line_length": 120,
+    "fenced-code-language": false,
     "MD004": {
         "style": "sublist"
     },
