@@ -15,7 +15,9 @@ function! SetLocalPlainTextStuff()
     setlocal wrap
     setlocal linebreak
     setlocal nolist
-    setlocal textwidth=80
+    " Enable textwidth to automatically break lines
+    " setlocal textwidth=80
+    setlocal textwidth=0
     setlocal wrapmargin=0
     setlocal formatoptions=tcoqnl1j
     setlocal autoindent
