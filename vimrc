@@ -14,7 +14,7 @@ set path=,,**,.
 " ===========
 syntax on
 set background=dark
-colorscheme palenight
+colorscheme nord
 
 " General Config
 " ==============
