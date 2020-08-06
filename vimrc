@@ -41,6 +41,7 @@ set fo=tcqor
 set splitbelow
 set splitright
 set scrolloff=3
+set virtualedit=all
 
 command! Paste call feedkeys('"+gP')
 
