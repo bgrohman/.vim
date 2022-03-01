@@ -6,8 +6,8 @@ mkdir ~/.vim-backup
 mkdir ~/.vim-workspaces
 
 # Only do this if you're not cloning into ~/.vim directly.
-# cwd=$(pwd)
-# ln -s "$cwd" ~/.vim
+cwd=$(pwd)
+ln -s "$cwd" ~/.vim
 
 # WINDOWS
 # Create link for vimfiles directory.
